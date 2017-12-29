@@ -1,21 +1,30 @@
 jQuery(document).ready(function($) {
-
+	
 		 /*
 		 *	Check if the like box has loaded. If yes then remove loader and add animation class!
 		 */
 
-		if ($(".efbl_feed_wraper .efbl_custom_likebox")[0]){
+	
+		  if ($(".efbl_feed_wraper .efbl_custom_likebox")[0] || $(".widget_easy_facebook_page_plugin .efbl-like-box")[0] ){
+		  	
+		  	if (typeof FB === 'undefined' || FB === null) {
+		  			setTimeout(function(){ $('.efbl-loader').remove(); }, 3000);
+		  		
+			}
+			else{
 
-			    FB.Event.subscribe('xfbml.render', function(response) {
+				FB.Event.subscribe('xfbml.render', function(response) {
 			    	var animclasses = $('.efbl-like-box .fb-page').data('animclass');
 			    	
 			    	$('.efbl-loader').remove();
 
 			    	$('.efbl-like-box iframe').addClass('animated ' + animclasses);
 			    	
-			    });
+			    });	
+			}
+			    
 
-		   }
+		    }
  		
  		// Magic function that will prepare and render markup.
  		function efbl_render_poup_markup(object){
