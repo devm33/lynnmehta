@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Water Work Exhibit</title>
+	<title>
+	Comments on: Water Work Exhibit	</title>
 	<atom:link href="/2013/06/water-work-exhibit/feed/" rel="self" type="application/rss+xml" />
 	<link>/2013/06/water-work-exhibit/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Tue, 03 Sep 2013 21:03:55 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

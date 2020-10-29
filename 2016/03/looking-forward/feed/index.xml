@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Looking Forward</title>
+	<title>
+	Comments on: Looking Forward	</title>
 	<atom:link href="/2016/03/looking-forward/feed/" rel="self" type="application/rss+xml" />
 	<link>/2016/03/looking-forward/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Thu, 05 May 2016 23:32:22 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

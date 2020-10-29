@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Artists&#8217; Melange I &#8211; Maryland Federation of Art</title>
+	<title>
+	Comments on: Artists&#8217; Melange I &#8211; Maryland Federation of Art	</title>
 	<atom:link href="/2013/02/artists-melange-i-maryland-federation-of-art/feed/" rel="self" type="application/rss+xml" />
 	<link>/2013/02/artists-melange-i-maryland-federation-of-art/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Mon, 08 Jul 2013 02:55:30 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

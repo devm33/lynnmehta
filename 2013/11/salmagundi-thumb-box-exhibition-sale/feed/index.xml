@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Salmagundi Thumb-Box Exhibition &#038; Sale</title>
+	<title>
+	Comments on: Salmagundi Thumb-Box Exhibition &#038; Sale	</title>
 	<atom:link href="/2013/11/salmagundi-thumb-box-exhibition-sale/feed/" rel="self" type="application/rss+xml" />
 	<link>/2013/11/salmagundi-thumb-box-exhibition-sale/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Mon, 13 Jan 2014 15:00:46 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

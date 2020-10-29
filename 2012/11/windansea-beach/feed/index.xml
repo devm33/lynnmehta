@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Windansea Beach</title>
+	<title>
+	Comments on: Windansea Beach	</title>
 	<atom:link href="/2012/11/windansea-beach/feed/" rel="self" type="application/rss+xml" />
 	<link>/2012/11/windansea-beach/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Mon, 08 Jul 2013 02:56:49 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

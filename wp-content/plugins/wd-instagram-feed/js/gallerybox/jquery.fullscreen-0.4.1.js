@@ -23,7 +23,6 @@ function extend(child, parent, prototype) {
         $.extend(child.prototype, prototype);
     }
 }
-
 var SUBST = [
     ['', ''],               // spec
     ['exit', 'cancel'],     // firefox & old webkits expect cancelFullScreen instead of exitFullscreen

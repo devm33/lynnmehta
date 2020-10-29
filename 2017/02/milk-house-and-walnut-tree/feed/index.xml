@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Milk House and Walnut Tree</title>
+	<title>
+	Comments on: Milk House and Walnut Tree	</title>
 	<atom:link href="/2017/02/milk-house-and-walnut-tree/feed/" rel="self" type="application/rss+xml" />
 	<link>/2017/02/milk-house-and-walnut-tree/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Thu, 13 Jul 2017 16:26:39 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

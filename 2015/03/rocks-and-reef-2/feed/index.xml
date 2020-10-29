@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Rocks and Reef</title>
+	<title>
+	Comments on: Rocks and Reef	</title>
 	<atom:link href="/2015/03/rocks-and-reef-2/feed/" rel="self" type="application/rss+xml" />
 	<link>/2015/03/rocks-and-reef-2/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Sun, 29 Oct 2017 20:32:03 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

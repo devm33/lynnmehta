@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Solo Exhibit, National Institutes of Health, Clinical Center Galleries</title>
+	<title>
+	Comments on: Solo Exhibit, National Institutes of Health, Clinical Center Galleries	</title>
 	<atom:link href="/2013/09/solo-exhibit-national-institutes-of-health-clinical-center-galleries/feed/" rel="self" type="application/rss+xml" />
 	<link>/2013/09/solo-exhibit-national-institutes-of-health-clinical-center-galleries/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Fri, 22 Nov 2013 13:52:29 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

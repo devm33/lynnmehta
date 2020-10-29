@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Hill Center Galleries at the Old Naval Hospital</title>
+	<title>
+	Comments on: Hill Center Galleries at the Old Naval Hospital	</title>
 	<atom:link href="/2014/01/hill-center-galleries-at-the-old-naval-hospital/feed/" rel="self" type="application/rss+xml" />
 	<link>/2014/01/hill-center-galleries-at-the-old-naval-hospital/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Thu, 06 Mar 2014 13:32:32 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

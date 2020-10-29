@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: En Plein Air &#8211; International Art Exhibition</title>
+	<title>
+	Comments on: En Plein Air &#8211; International Art Exhibition	</title>
 	<atom:link href="/2013/02/en-plein-air-international-art-exhibition/feed/" rel="self" type="application/rss+xml" />
 	<link>/2013/02/en-plein-air-international-art-exhibition/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Mon, 08 Jul 2013 02:55:46 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

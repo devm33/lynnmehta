@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Piedmont Plein Aire Paint Out 2014</title>
+	<title>
+	Comments on: Piedmont Plein Aire Paint Out 2014	</title>
 	<atom:link href="/2014/09/piedmont-plein-aire-paint-2014/feed/" rel="self" type="application/rss+xml" />
 	<link>/2014/09/piedmont-plein-aire-paint-2014/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Fri, 14 Nov 2014 14:55:53 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

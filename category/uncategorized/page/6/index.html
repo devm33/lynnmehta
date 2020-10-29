@@ -10,9 +10,14 @@
 <link rel="alternate" type="application/rss+xml" title="Lynn Mehta Fine Art &raquo; Feed" href="/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Lynn Mehta Fine Art &raquo; Comments Feed" href="/comments/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Lynn Mehta Fine Art &raquo; Uncategorized Category Feed" href="/category/uncategorized/feed/" />
-<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.6 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.12.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <script type="text/javascript" data-cfasync="false">
-		var disableStr = 'ga-disable-UA-30388496-1';
+    (window.gaDevIds=window.gaDevIds||[]).push("dZGIzZG");
+	var mi_version         = '7.12.3';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-30388496-1';
 
 	/* Function to detect opted out users */
 	function __gaTrackerIsOptedOut() {
@@ -29,19 +34,71 @@
 	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
 	  window[disableStr] = true;
 	}
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
 
-	__gaTracker('create', 'UA-30388496-1', 'auto');
-	__gaTracker('set', 'forceSSL', true);
-	__gaTracker('send','pageview');
+	if ( 'undefined' === typeof gaOptout ) {
+		function gaOptout() {
+			__gaTrackerOptout();
+		}
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-30388496-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
 </script>
 <!-- / Google Analytics by MonsterInsights -->
 		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.15"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
 		</script>
 		<style type="text/css">
 img.wp-smiley,
@@ -57,31 +114,36 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css?ver=5.5.1' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-facebook-likebox-plugin-styles-css'  href='/wp-content/plugins/easy-facebook-likebox/public/assets/css/public.css?ver=4.3.5' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-facebook-likebox-font-awesome-css'  href='/wp-content/plugins/easy-facebook-likebox/public/assets/css/font-awesome.css?ver=4.3.5' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-facebook-likebox-animate-css'  href='/wp-content/plugins/easy-facebook-likebox/public/assets/css/animate.css?ver=4.3.5' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-facebook-likebox-popup-styles-css'  href='/wp-content/plugins/easy-facebook-likebox/public/assets/popup/magnific-popup.css?ver=4.3.5' type='text/css' media='all' />
 <link rel='stylesheet' id='page-list-style-css'  href='/wp-content/plugins/page-list/css/page-list.css?ver=5.1' type='text/css' media='all' />
-<link rel='stylesheet' id='parent-style-css'  href='/wp-content/themes/tempera/style.css?ver=4.9.15' type='text/css' media='all' />
-<link rel='stylesheet' id='child-style-css'  href='/wp-content/themes/lynnmehta_tempura/style.css?ver=4.9.15' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='/wp-content/themes/tempera/style.css?ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='child-style-css'  href='/wp-content/themes/lynnmehta_tempura/style.css?ver=5.5.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tempera-fonts-css'  href='/wp-content/themes/tempera/fonts/fontfaces.css?ver=1.6.1.2' type='text/css' media='all' />
 <link rel='stylesheet' id='tempera-style-css'  href='/wp-content/themes/lynnmehta_tempura/style.css?ver=1.6.1.2' type='text/css' media='all' />
 <link rel='stylesheet' id='jquery.lightbox.min.css-css'  href='/wp-content/plugins/wp-jquery-lightbox/styles/lightbox.min.css?ver=1.4.6' type='text/css' media='all' />
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/popup/jquery.magnific-popup.min.js?ver=4.3.5'></script>
-<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/js/jquery.cookie.js?ver=4.3.5'></script>
-<script type='text/javascript'>
+<script type='text/javascript' id='monsterinsights-frontend-script-js-extra'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=7.12.3' id='monsterinsights-frontend-script-js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/popup/jquery.magnific-popup.min.js?ver=4.3.5' id='easy-facebook-likebox-popup-script-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/js/jquery.cookie.js?ver=4.3.5' id='easy-facebook-likebox-cookie-script-js'></script>
+<script type='text/javascript' id='easy-facebook-likebox-public-script-js-extra'>
 /* <![CDATA[ */
 var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/js/public.js?ver=4.3.5'></script>
-<link rel='https://api.w.org/' href='/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/js/public.js?ver=4.3.5' id='easy-facebook-likebox-public-script-js'></script>
+<link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" type="application/json" href="/wp-json/wp/v2/categories/1" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.9.15" />
+<meta name="generator" content="WordPress 5.5.1" />
 <style type="text/css"> #header, #main, #topbar-inner { max-width: 1150px; } #container.one-column { } #container.two-columns-right #secondary { width:250px; float:right; } #container.two-columns-right #content { width:calc(100% - 280px); float:left; } #container.two-columns-left #primary { width:250px; float:left; } #container.two-columns-left #content { width:calc(100% - 280px); float:right; } #container.three-columns-right .sidey { width:125px; float:left; } #container.three-columns-right #primary { margin-left:15px; margin-right:15px; } #container.three-columns-right #content { width: calc(100% - 280px); float:left;} #container.three-columns-left .sidey { width:125px; float:left; } #container.three-columns-left #secondary {margin-left:15px; margin-right:15px; } #container.three-columns-left #content { width: calc(100% - 280px); float:right; } #container.three-columns-sided .sidey { width:125px; float:left; } #container.three-columns-sided #secondary { float:right; } #container.three-columns-sided #content { width: calc(100% - 310px); float:right; margin: 0 155px 0 -1150px; } body { font-family: "Open Sans"; } #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title , #content h2.entry-title { font-family: "Bebas Neue"; } .widget-title, .widget-title a { font-family: "Bebas Neue"; } .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, #comments #reply-title, .nivo-caption h2, #front-text1 h2, #front-text2 h2, .column-header-image, .column-header-noimage { font-family: "Yanone Kaffeesatz Regular"; } #site-title span a { font-family: inherit; } #access ul li a, #access ul li a span { font-family: "Open Sans"; } body { color: #333333; background-color: #EFF0EC } a { color: #61928C; } a:hover,.entry-meta span a:hover, .comments-link a:hover { color: #59554E; } #header { background-color: ; } #site-title span a { color:#59554E; } #site-description { color:#444444; } .socials a { background-color: #9BBDB9; } .socials .socials-hover { background-color: #59554E; } /* Main menu top level */ #access a, #nav-toggle span, li.menu-main-search .searchform input[type="search"] { color: #EEEEEE; } li.menu-main-search .searchform input[type="search"] { background-color: #716d66; border-left-color: #3b3730; } #access, #nav-toggle {background-color: #59554E; } #access > .menu > ul > li > a > span { border-color: #3b3730; -webkit-box-shadow: 1px 0 0 #716d66; box-shadow: 1px 0 0 #716d66; } /*.rtl #access > .menu > ul > li > a > span { -webkit-box-shadow: -1px 0 0 #716d66; box-shadow: -1px 0 0 #716d66; } */ #access a:hover {background-color: #66625b; } #access ul li.current_page_item > a, #access ul li.current-menu-item > a, #access ul li.current_page_ancestor > a, #access ul li.current-menu-ancestor > a { background-color: #66625b; } /* Main menu Submenus */ #access > .menu > ul > li > ul:before {border-bottom-color:#61928C;} #access ul ul ul li:first-child:before { border-right-color:#61928C;} #access ul ul li { background-color:#61928C; border-top-color:#6fa09a; border-bottom-color:#568781} #access ul ul li a{color:#EEEEEE} #access ul ul li a:hover{background:#6fa09a} #access ul ul li.current_page_item > a, #access ul ul li.current-menu-item > a, #access ul ul li.current_page_ancestor > a, #access ul ul li.current-menu-ancestor > a { background-color:#6fa09a; } #topbar { background-color: #E2E3D9;border-bottom-color:#ffffff; box-shadow:3px 0 3px #babbb1; } .topmenu ul li a, .topmenu .searchsubmit { color: #333333; } .topmenu ul li a:hover, .topmenu .searchform input[type="search"] { color: #333333; border-bottom-color: rgba( 97,146,140, 0.5); } #main { background-color: #FFFFFF; } #author-info, #entry-author-info, #content .page-title { border-color: #61928C; background: #EFF0EC; } #entry-author-info #author-avatar, #author-info #author-avatar { border-color: #EEEEEE; } .sidey .widget-container { color: #333333; background-color: #FFFFFF; } .sidey .widget-title { color: #61928C; background-color: #F3F4E5;border-color:#cbccbd;} .sidey .widget-container a {color:;} .sidey .widget-container a:hover {color:;} .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 { color: #466A66; } .sticky .entry-header {border-color:#61928C } .entry-title, .entry-title a { color: #466A66; } .entry-title a:hover { color: #61928C; } #content span.entry-format { color: #EEEEEE; background-color: #59554E; } #footer { color: #EEEEEE; background-color: ; } #footer2 { color: #EEEEEE; background-color: #59554E; } #footer a { color: #F3F4E5; } #footer a:hover { color: #9BBDB9; } #footer2 a, .footermenu ul li:after { color: #F3F4E5; } #footer2 a:hover { color: #9BBDB9; } #footer .widget-container { color: #fff; background-color: #59554E; } #footer .widget-title { color: #59554E; background-color: #F3F4E5;border-color:#cbccbd } a.continue-reading-link, #cryout_ajax_more_trigger { color:#EEEEEE; background:#59554E; border-bottom-color:#61928C; } a.continue-reading-link:hover { border-bottom-color:#59554E; } a.continue-reading-link i.crycon-right-dir {color:#61928C} a.continue-reading-link:hover i.crycon-right-dir {color:#59554E} .page-link a, .page-link > span > em {border-color:#999} .columnmore a {background:#61928C;color:#EFF0EC} .columnmore a:hover {background:#59554E;} .button, #respond .form-submit input#submit, input[type="submit"], input[type="reset"] { background-color: #61928C; } .button:hover, #respond .form-submit input#submit:hover { background-color: #59554E; } .entry-content tr th, .entry-content thead th { color: #466A66; } .entry-content fieldset, #content tr td,#content tr th, #content thead th { border-color: #999; } #content tr.even td { background-color: #EFF0EC !important; } hr { background-color: #999; } input[type="text"], input[type="password"], input[type="email"], textarea, select, input[type="color"],input[type="date"],input[type="datetime"],input[type="datetime-local"],input[type="month"],input[type="number"],input[type="range"], input[type="search"],input[type="tel"],input[type="time"],input[type="url"],input[type="week"] { background-color: #EFF0EC; border-color: #999 #EEEEEE #EEEEEE #999; color: #333333; } input[type="submit"], input[type="reset"] { color: #FFFFFF; background-color: #61928C; } input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, textarea:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="range"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover { background-color: rgba(239,240,236,0.4); } .entry-content pre { border-color: #999; border-bottom-color:#61928C;} .entry-content code { background-color:#EFF0EC;} .entry-content blockquote { border-color: #EEEEEE; } abbr, acronym { border-color: #333333; } .comment-meta a { color: #333333; } #respond .form-allowed-tags { color: #BBBBBB; } .entry-meta .crycon-metas:before {color:#CCCCCC;} .entry-meta span a, .comments-link a, .entry-meta {color:#666666;} .entry-meta span a:hover, .comments-link a:hover {color:;} .nav-next a:hover {} .nav-previous a:hover { } .pagination { border-color:#e5e6e2;} .pagination span, .pagination a { background:#EFF0EC; border-left-color:#d5d6d2; border-right-color:#fffffc; } .pagination a:hover { background: #f7f8f4; } #searchform input[type="text"] {color:#BBBBBB;} .caption-accented .wp-caption { background-color:rgba(97,146,140,0.8); color:#FFFFFF} .tempera-image-one .entry-content img[class*='align'],.tempera-image-one .entry-summary img[class*='align'], .tempera-image-two .entry-content img[class*='align'],.tempera-image-two .entry-summary img[class*='align'] { border-color:#61928C;} html { font-size:14px; line-height:1.7; } #content p, #content ul, #content ol, #content, #frontpage blockquote { text-align:Default; } #content p, #content ul, #content ol, #content dl, .widget-area, .widget-area a, table, table td { word-spacing:Default; letter-spacing:; } #site-title a, #site-description, #access a, .topmenu ul li a, .footermenu a, .entry-meta span a, .entry-utility span a, #content span.entry-format, span.edit-link, h3#comments-title, h3#reply-title, .comment-author cite, .comments .reply a, .widget-title, #site-info a, .nivo-caption h2, a.continue-reading-link, .column-image h3, #front-columns h3.column-header-noimage, .tinynav , .entry-title, .breadcrumbs, .page-link{ text-transform: uppercase; }#content h1.entry-title, #content h2.entry-title { font-size:34px ;} .widget-title, .widget-title a { font-size:18px ;} h1 { font-size: 2.526em;} h2 { font-size: 2.202em;} h3 { font-size: 1.878em;} h4 { font-size: 1.554em;} h5 { font-size: 1.23em;} h6 { font-size: 0.906em;} #site-title { font-size:38px ;} #access ul li a, li.menu-main-search .searchform input[type="search"] { font-size:14px ;} .nocomments, .nocomments2 {display:none;} #header-container > div { margin:40px 0 0 0px;} #content p, #content ul, #content ol, #content dd, #content pre, #content hr { margin-bottom: 1.0em; } header.entry-header > .entry-meta { display: none; } #toTop {background:#FFFFFF;margin-left:1300px;} #toTop:hover .crycon-back2top:before {color:#59554E;} #main {margin-top:20px; } #forbottom {margin-left: 30px; margin-right: 30px;} #header-widget-area { width: 33%; } #branding { height:120px; } @media (max-width: 1920px) {#branding, #bg_image { height:auto; max-width:100%; min-height:inherit !important; } } </style> 
 
 <link rel='stylesheet' id='tempera-style-mobile'  href='/wp-content/themes/tempera/styles/style-mobile.css?ver=1.6.1.2' type='text/css' media='all' />	<!--[if lt IE 9]>
@@ -166,7 +228,7 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 						
 												<div class="entry-summary">
 												<p>Eight of my recent paintings will be on display including work from my February trip to Tucson, AZ.   MFA Circle Gallery, 18 State Circle, Annapolis, MD 21401.  Show runs Feb. 27 – March 10, 2013 , reception: Sunday, March 3, 3-5 pm.</p>
-<p class="continue-reading-button"> <a href="/2013/02/artists-melange-i-maryland-federation-of-art/" onclick="__gaTracker('send', 'event', 'outbound-article', '/2013/02/artists-melange-i-maryland-federation-of-art/', 'Continue reading');" class="continue-reading-link">Continue reading<i class="crycon-right-dir"></i></a></p>
+<p class="continue-reading-button"> <a class="continue-reading-link" href="/2013/02/artists-melange-i-maryland-federation-of-art/">Continue reading<i class="crycon-right-dir"></i></a></p>
 						</div><!-- .entry-summary -->
 									
 		
@@ -197,7 +259,7 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 						
 												<div class="entry-summary">
 												<p>The San Diego Museum of Art Artists Guild is proud to present En Plein-Air, A Charles Reiffel Tribute 2013, an International Art Exhibiton of 43 Plein-Air paintings by 34 artists in conjunction with the San Diego Museum of Art&#8217;s Charles Reiffel Exhibition.Show opens February 19th, 2013 Opening Reception Sunday February…</p>
-<p class="continue-reading-button"> <a href="/2013/02/en-plein-air-international-art-exhibition/" onclick="__gaTracker('send', 'event', 'outbound-article', '/2013/02/en-plein-air-international-art-exhibition/', 'Continue reading');" class="continue-reading-link">Continue reading<i class="crycon-right-dir"></i></a></p>
+<p class="continue-reading-button"> <a class="continue-reading-link" href="/2013/02/en-plein-air-international-art-exhibition/">Continue reading<i class="crycon-right-dir"></i></a></p>
 						</div><!-- .entry-summary -->
 									
 		
@@ -230,7 +292,7 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 						<a title="La Piccolo Roma" href="/2012/12/la-piccolo-roma/" >
 					<img width="250" title="" alt="" class="alignleft post_thumbnail" src="/wp-content/uploads/2012/11/Wildflowers_at_River_Farm_9_x_12-250x150.jpg">
 			  </a>						<p>Come on over to La Piccolo Roma on Tuesday night for the artist reception. Paintings will be on display throughout the month. La Piccolo Roma, on Main St. in Annapolis, is a wonderful restaurant. Enjoy free 2-hour parking on Main St. through the holidays. Shop, eat, and have fun! http://app.e2ma.net/app2/campaigns/archived/33846/c17ac2045dc0f8f49d30464d35674a36/</p>
-<p class="continue-reading-button"> <a href="/2012/12/la-piccolo-roma/" onclick="__gaTracker('send', 'event', 'outbound-article', '/2012/12/la-piccolo-roma/', 'Continue reading');" class="continue-reading-link">Continue reading<i class="crycon-right-dir"></i></a></p>
+<p class="continue-reading-button"> <a class="continue-reading-link" href="/2012/12/la-piccolo-roma/">Continue reading<i class="crycon-right-dir"></i></a></p>
 						</div><!-- .entry-summary -->
 									
 		
@@ -261,7 +323,7 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 						
 												<div class="entry-summary">
 												<p>My painting from Windansea Beach in La Jolla, CA that I painted this summer is available from the Randy Higbee Gallery&#8217;s 6 inch square show. http://6inchsquared.dailybrushwork.com/Sort.aspx?uid=999&amp;GSID=15&amp;pg=1</p>
-<p class="continue-reading-button"> <a href="/2012/11/windansea-beach/" onclick="__gaTracker('send', 'event', 'outbound-article', '/2012/11/windansea-beach/', 'Continue reading');" class="continue-reading-link">Continue reading<i class="crycon-right-dir"></i></a></p>
+<p class="continue-reading-button"> <a class="continue-reading-link" href="/2012/11/windansea-beach/">Continue reading<i class="crycon-right-dir"></i></a></p>
 						</div><!-- .entry-summary -->
 									
 		
@@ -292,7 +354,7 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 						
 												<div class="entry-summary">
 												<p>I will be painting at Plein Air Brandywine Valley Sept 26 &#8211; 30. Gala will be held Fri evening and Art Exhibit will be free and open to the public Sat 10 &#8211; 4 and Sun noon &#8211; 4 at Tatnall School in Wilmington. https://www.pleinairbrandywinevalley.org &nbsp;</p>
-<p class="continue-reading-button"> <a href="/2012/09/plein-air-brandywine-valley/" onclick="__gaTracker('send', 'event', 'outbound-article', '/2012/09/plein-air-brandywine-valley/', 'Continue reading');" class="continue-reading-link">Continue reading<i class="crycon-right-dir"></i></a></p>
+<p class="continue-reading-button"> <a class="continue-reading-link" href="/2012/09/plein-air-brandywine-valley/">Continue reading<i class="crycon-right-dir"></i></a></p>
 						</div><!-- .entry-summary -->
 									
 		
@@ -323,7 +385,7 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 						
 												<div class="entry-summary">
 												<p>Rail Trail Impressions Show was highlighted on WAMU&#8217;s Art Beat this morning! I have 27 paintings hanging on display at Mattawoman Creek Art Center through June 4th. http://wamu.org/news/11/05/05/art_beat_with_sean_rameswaram.php &nbsp;</p>
-<p class="continue-reading-button"> <a href="/2011/05/rail-trail-impressions-show-in-art-beat/" onclick="__gaTracker('send', 'event', 'outbound-article', '/2011/05/rail-trail-impressions-show-in-art-beat/', 'Continue reading');" class="continue-reading-link">Continue reading<i class="crycon-right-dir"></i></a></p>
+<p class="continue-reading-button"> <a class="continue-reading-link" href="/2011/05/rail-trail-impressions-show-in-art-beat/">Continue reading<i class="crycon-right-dir"></i></a></p>
 						</div><!-- .entry-summary -->
 									
 		
@@ -351,8 +413,6 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 </div>
 		</li><li id="text-16" class="widget-container widget_text"><h3 class="widget-title">Individual Art Mentorship Online</h3>			<div class="textwidget"><p>During these trying times I am now offering online mentorship sessions. You determine what you want to focus on and we work with your individual learning style. Contact me directly and we can discuss a plan and schedule to meet your artistic goals.</p>
 </div>
-		</li><li id="text-17" class="widget-container widget_text"><h3 class="widget-title">Paint Annapolis &#8211; September/October 2020</h3>			<div class="textwidget"><p>Paint Annapolis will go forward this fall with a more reduced schedule and I am grateful to be able to participate. With a socially distanced plan, I will be painting on location September 20-24. Paintings will be on display at the Maryland Federation of Art through October 22. Artwork will be for sale online at <a href="https://mdfedart.com/">Maryland Federation of Art</a></p>
-</div>
 		</li><li id="easy_facebook_page_plugin-2" class="widget-container widget_easy_facebook_page_plugin"><div id="fb-root"></div>
 					<script>(function(d, s, id) {
 					  var js, fjs = d.getElementsByTagName(s)[0];
@@ -367,232 +427,123 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 							</div> 
 							
 						</div>
-					</li><li id="wdi_instagram_widget-3" class="widget-container wdi_instagram_widget"><h3 class="widget-title">Instagram Feed</h3>    <style type="text/css">
-      #wdi_feed_0 .wdi_feed_container {
-        width: 100%;
-        background-color: #FFFFFF; /*feed_container_bg_color*/
-        border-bottom: 5px solid #FFFFFF; /*feed_container_bg_color*/;
-      }
+					</li><li id="wdi_instagram_widget-3" class="widget-container wdi_instagram_widget"><h3 class="widget-title">Instagram Feed</h3>    <div id="wdi_feed_0" class="wdi_feed_main_container wdi_layout_th wdi_feed_theme_1 wdi_feed_thumbnail_1"  >
+      <div  class="wdi_js_error">Something is wrong.<br/></div><div  class="wdi_token_error wdi_hidden">Instagram token error.</div><div  class="wdi_private_feed_error wdi_hidden"><span></span></div><div class="wdi_check_fontawesome wdi_hidden"><i class="tenweb-i tenweb-i-instagram"></i></div>      <div id="wdi_spider_popup_loading_0" class="wdi_spider_popup_loading"></div>
+      <div id="wdi_spider_popup_overlay_0" class="wdi_spider_popup_overlay" onclick="wdi_spider_destroypopup(1000)"></div>
+      <div class="wdi_feed_container">
+        <div class="wdi_feed_info">
+          <div id="wdi_feed_0_header" class='wdi_feed_header'></div>
+          <div id="wdi_feed_0_users" class='wdi_feed_users'>
+                  <div class="wdi_single_user">
+        <div class="wdi_header_user_text">
+                      <div class="wdi_user_controls">
+              <div class="wdi_follow_btn"
+                   onclick="window.open('//instagram.com/lynnmehta','_blank')">
+                <span>Follow</span>
+              </div>
+            </div>
+                                      </div>
+      </div>
+      <div class="wdi_clear"></div>
+                </div>
+        </div>
+                <div class="wdi_feed_wrapper wdi_col_1"
+             wdi-res='wdi_col_1'></div>
+        <div class="wdi_clear"></div>
 
-      #wdi_feed_0 .wdi_feed_wrapper {
-        width: 100%; /*feed_wrapper_width,column number * image size*/
-        background-color: #FFFFFF; /*feed_wrapper_bg_color*/
-        text-align: left; /*header_position*/
-      }
+                    <div class="wdi_load_more wdi_hidden">
+              <div class="wdi_load_more_container">
+                <div class="wdi_load_more_wrap">
+                  <div class="wdi_load_more_wrap_inner">
+                    <div class="wdi_load_more_text">Load More</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="wdi_spinner">
+              <div class="wdi_spinner_container">
+                <div class="wdi_spinner_wrap">
+                  <div class="wdi_spinner_wrap_inner"><i class="wdi_load_more_spinner tenweb-i tenweb-i-spinner"></i></div>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+      <div class="wdi_front_overlay"></div>
+    </div>
+        <style></style>
+        <script></script>
+    </li>			</ul>
 
+			
+		</div>
+		</section><!-- #primary -->
+
+	<div style="clear:both;"></div>
+	</div> <!-- #forbottom -->
+
+
+	<footer id="footer" role="contentinfo">
+		<div id="colophon">
+		
+			
+
+			<div id="footer-widget-area"  role="complementary"  class="footerone" >
+
+				<div id="first" class="widget-area">
+					<ul class="xoxo">
+						<li id="text-15" class="widget-container widget_text">			<div class="textwidget"><p>Lynn Mehta Fine Art</p>
+<p>Alexandria, Virginia</p>
+<p>© Lynn Mehta 2008 &#8211; 2018</p>
+<p><em>All Reproduction Rights Reserved by Artist.</em></p>
+</div>
+		</li>					</ul>
+				</div><!-- #first .widget-area -->
+
+
+
+			</div><!-- #footer-widget-area -->
+			
+		</div><!-- #colophon -->
+
+		<div id="footer2">
+		
+				<span style="display:block;float:right;text-align:right;padding:0 20px 5px;font-size:.9em;">
+	Powered by <a target="_blank" href="http://www.cryoutcreations.eu/" title="Tempera Theme by Cryout Creations">Tempera</a> &amp; <a target="_blank" href="http://wordpress.org/"
+			title="Semantic Personal Publishing Platform">  WordPress.		</a>
+	</span><!-- #site-info -->
+				
+		</div><!-- #footer2 -->
+
+	</footer><!-- #footer -->
+
+	</div><!-- #main -->
+</div><!-- #wrapper -->
+
+
+<link rel='stylesheet' id='font-tenweb-css'  href='/wp-content/plugins/wd-instagram-feed/css/tenweb-fonts/fonts.css?ver=2.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wdi_frontend_thumbnails-css'  href='/wp-content/plugins/wd-instagram-feed/css/wdi_frontend.min.css?ver=2.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='mCustomScrollbar-css'  href='/wp-content/plugins/wd-instagram-feed/css/gallerybox/jquery.mCustomScrollbar.min.css?ver=2.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wdi_theme_1.css-css'  href='/wp-content/uploads/wd-instagram-feed/wdi_theme_1.css?key=5f9afaecc6ce2&#038;ver=5.5.1' type='text/css' media='all' />
+<style id='generate_feed_styles-inline-css' type='text/css'>
       #wdi_feed_0 .wdi_feed_header {
-        margin: 0px; /*header_margin*/
-        padding: 5px; /*header_padding*/
-        border: 0px solid #DDDDDD; /*header_border_size, header_border_color*/
-        text-align: left; /*header_position*/
         display: none; /*if display-header is true display:block*/
-      }
-
-      #wdi_feed_0 .wdi_header_img_wrap, .wdi_users_img_wrap {
-        height: 40px; /*header_img_width*/
-        width: 40px; /*header_img_width*/
-        border-radius: 0px; /*header_img_width*/
-      }
-
-      #wdi_feed_0 .wdi_header_text {
-        font-size: 18px;
-        font-style: normal;
-        padding: 5px; /*header_text_padding*/
-        color: #0f4973; /*header_text_color*/
-        font-weight: 400; /*header_font_weight*/
-        line-height: 40px; /*header_img_width*/
-      }
-
-      #wdi_feed_0 .wdi_single_user {
-        padding-top: 5px; /*user_padding*/
-        padding-bottom: 5px; /*user_padding*/
-        padding-left: 5px; /*user_padding*/
-        padding-right: 5px; /*user_padding*/
       }
 
             #wdi_feed_0 .wdi_header_user_text {
         padding-top: 5.5px;
-
       }
 
       #wdi_feed_0 .wdi_header_user_text h3 {
         margin-top: 5.5px;
       }
 
-      #wdi_feed_0 .wdi_header_hashtag h3 {
-        margin-top: 11px;
-      }
-
-      #wdi_feed_0 .wdi_header_user_text h3 {
-        font-size: 18px;
-        font-style: normal;
-        line-height: 18px;
-        color: #0f4973; /*header_text_color*/;
-      }
-
-      #wdi_feed_0 .wdi_user_img_wrap img {
-        height: 40px;
-        width: 40px;
-        border-radius: 40px;
-      }
-
       #wdi_feed_0 .wdi_media_info {
-        /*display: inline-block;*/
-        margin-left: 50px;
-        line-height: 18px;
-        color: #0f4973; /*header_text_color !mmm/ seperate*/
         display: block      }
-
-
-      #wdi_feed_0 .wdi_bio {
-        color: #0f4973; /*header_text_color*/
-        font-size: 14px; /*header_text_color*/
-      }
-
-
-      #wdi_feed_0 .wdi_follow_btn {
-        border-radius: 3px;
-        font-size: 18px;
-        background-color: #ffffff;
-        border-color: #0f4973;
-        color: #0f4973;
-        margin-left: 10px;
-        padding: 0 25px;
-      }
-
-      #wdi_feed_0 .wdi_follow_btn:hover {
-        border-color: #0f4973;
-        color: #0f4973;
-        background-color: #ffffff;
-      }
-
-      #wdi_feed_0 .wdi_filter_overlay {
-        width: 40px; /*user_img_width*/
-        height: 40px; /*user_img_width*/
-        border-radius: 40px; /*user_img_width*/
-        background-color: #125688;
-      }
-
-      #wdi_feed_0 .wdi_filter_icon span {
-        width: 40px; /*header_img_width*/
-        height: 40px; /*header_img_width*/
-      }
-
-      #wdi_feed_0 .wdi_photo_wrap {
-        padding: 5px; /*photo_wrap_padding*/
-        width: calc(100% - 2 *5px);
-      }
-
-      #wdi_feed_0 .wdi_photo_wrap_inner {
-        border: 5px solid #ffffff; /*photo_wrap_border_size,photo_wrap_border_color*/
-        background-color: #FFFFFF; /*photo_wrap_bg_color*/
-      }
-
-      #wdi_feed_0 .wdi_photo_img {
-        border-radius: 0px; /*photo_img_border_radius*/
-      }
-
 
       #wdi_feed_0 .wdi_feed_item {
         width: 100%; /*thumbnail_size*/
-      }
-
-      #wdi_feed_0 .wdi_photo_meta {
-        background-color: #FFFFFF; /*photo_meta_bg_color*/
-      }
-
-      #wdi_feed_0 .wdi_thumb_likes {
-        width: 50%; /*photo_meta_one_line==false else 100%*/
-        float: left; /*photo_meta_one_line==true else float none*/
-        font-size: 13px; /*photo_caption_font_size*/;
-        color: #8a8d8e; /*like_text_color*/
-
-      }
-
-      #wdi_feed_0 .wdi_thumb_comments {
-        width: 50%; /*photo_meta_one_line==false else 100%*/
-        float: left; /*photo_meta_one_line==true else float none*/
-        font-size: 13px; /*photo_caption_font_size*/;
-        color: #8a8d8e; /*comment_text_color*/
-
-      }
-
-
-      #wdi_feed_0 .wdi_photo_title {
-        font-size: 14px; /*photo_caption_font_size*/
-        color: #125688; /*photo_caption_color*/
-      }
-
-      #wdi_feed_0 .wdi_photo_title:hover {
-        color: #8e8e8e;
-      }
-
-      #wdi_feed_0 .wdi_load_more_spinner {
-        color: #1e73be; /*load_more_text_color*/
-        font-size: 18.2px; /*load_more_text_font_size*/
-      }
-
-      #wdi_feed_0 .wdi_load_more,
-      #wdi_feed_0 .wdi_spinner {
-        background-color: #FFFFFF; /*feed_container_bg_color*/
-        text-align: center; /*load_more_position*/
-      }
-
-      #wdi_feed_0 .wdi_load_more_wrap,
-      #wdi_feed_0 .wdi_spinner_wrap {
-        padding: 4px; /*load_more_padding*/
-        background-color: #ffffff; /*load_more_bg_color*/
-        border-radius: 500px; /*load_more_border_radius*/
-        height: 90px; /*load_more_height*/
-        width: 90px; /*load_more_width*/
-        border: 1px solid #0f4973; /*load_more_border_size, load_more_border_color*/;
-      }
-
-      #wdi_feed_0 .wdi_load_more_text {
-        color: #1e73be; /*load_more_text_color*/
-        font-size: 14px; /*load_more_text_font_size*/
-      }
-
-      #wdi_feed_0 .wdi_load_more_text img {
-        height: 90px; /*load_more_height*/
-        width: 90px; /*load_more_height*/
-      }
-
-      #wdi_feed_0 .wdi_load_more_wrap:hover {
-        background-color: transparent; /*load_more_wrap_hover_color*/
-      }
-
-      #wdi_feed_0 .wdi_pagination {
-        text-align: center; /*load_more_position*/
-        color: #0f4973; /*pagination_ctrl_color*/
-        font-size: 36px; /*pagination_size*/
-      }
-
-      #wdi_feed_0 .wdi_pagination_ctrl {
-        margin: 15px;
-      }
-
-      #wdi_feed_0 .wdi_pagination_ctrl:hover {
-        color: #25292c;
-      }
-
-      #wdi_feed_0 .wdi_photo_overlay:hover {
-        background-color: #125688;
-        opacity: 0.5;
-      }
-
-      #wdi_feed_0 .wdi_photo_overlay i {
-        font-size: 25px;
-        color: #FFFFFF;
-      }
-
-      #wdi_feed_0 .wdi_filter_active_bg {
-        background-color: #429fff;
-      }
-
-      #wdi_feed_0 .wdi_filter_active_col {
-        color: #429fff;
-        border-color: #429fff;
+        line-height: 0;
       }
 
             @media screen and (min-width: 800px) and (max-width: 1024px) {
@@ -644,130 +595,47 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
         }
       }
 
-          </style>
-    
-    <div id="wdi_feed_0" class="wdi_feed_main_container wdi_layout_th"  >
-      <div id="wdi_spider_popup_loading_0" class="wdi_spider_popup_loading"></div>
-      <div id="wdi_spider_popup_overlay_0" class="wdi_spider_popup_overlay"
-           onclick="wdi_spider_destroypopup(1000)"></div>
-      <div class="wdi_feed_container">
-        <div class="wdi_feed_info">
-          <div id="wdi_feed_0_header" class='wdi_feed_header'></div>
-          <div id="wdi_feed_0_users" class='wdi_feed_users'></div>
-        </div>
-                <div class="wdi_feed_wrapper wdi_col_1"
-             wdi-res='wdi_col_1'></div>
-        <div class="wdi_clear"></div>
-
-                    <div class="wdi_load_more wdi_hidden">
-              <div class="wdi_load_more_container">
-                <div class="wdi_load_more_wrap">
-                  <div class="wdi_load_more_wrap_inner">
-                    <div class="wdi_load_more_text">Load More</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="wdi_spinner">
-              <div class="wdi_spinner_container">
-                <div class="wdi_spinner_wrap">
-                  <div class="wdi_spinner_wrap_inner"><i class="wdi_load_more_spinner fa fa-spinner"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="wdi_js_error wdi_hidden">Something is wrong. Response takes too long or there is JS error. Press Ctrl+Shift+J or Cmd+Shift+J on a Mac.<br/></div>      </div>
-    </div>
-        <style>
-          </style>
-        <script>
-          </script>
-    </li>			</ul>
-
-			
-		</div>
-		</section><!-- #primary -->
-
-	<div style="clear:both;"></div>
-	</div> <!-- #forbottom -->
-
-
-	<footer id="footer" role="contentinfo">
-		<div id="colophon">
-		
-			
-
-			<div id="footer-widget-area"  role="complementary"  class="footerone" >
-
-				<div id="first" class="widget-area">
-					<ul class="xoxo">
-						<li id="text-15" class="widget-container widget_text">			<div class="textwidget"><p>Lynn Mehta Fine Art</p>
-<p>Alexandria, Virginia</p>
-<p>© Lynn Mehta 2008 &#8211; 2018</p>
-<p><em>All Reproduction Rights Reserved by Artist.</em></p>
-</div>
-		</li>					</ul>
-				</div><!-- #first .widget-area -->
-
-
-
-			</div><!-- #footer-widget-area -->
-			
-		</div><!-- #colophon -->
-
-		<div id="footer2">
-		
-				<span style="display:block;float:right;text-align:right;padding:0 20px 5px;font-size:.9em;">
-	Powered by <a target="_blank" href="http://www.cryoutcreations.eu/" title="Tempera Theme by Cryout Creations">Tempera</a> &amp; <a target="_blank" href="http://wordpress.org/"
-			title="Semantic Personal Publishing Platform">  WordPress.		</a>
-	</span><!-- #site-info -->
-				
-		</div><!-- #footer2 -->
-
-	</footer><!-- #footer -->
-
-	</div><!-- #main -->
-</div><!-- #wrapper -->
-
-
-<link rel='stylesheet' id='wdi_mCustomScrollbar-css'  href='/wp-content/plugins/wd-instagram-feed/css/gallerybox/jquery.mCustomScrollbar.min.css?ver=1.2.11' type='text/css' media='all' />
-<link rel='stylesheet' id='wdi_frontend_thumbnails-css'  href='/wp-content/plugins/wd-instagram-feed/css/wdi_frontend.min.css?ver=1.2.11' type='text/css' media='all' />
-<link rel='stylesheet' id='font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=1.2.11' type='text/css' media='all' />
-<script type='text/javascript'>
+          
+</style>
+<script type='text/javascript' id='tempera-frontend-js-extra'>
 /* <![CDATA[ */
 var tempera_settings = {"mobile":"1","fitvids":"1"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/themes/tempera/js/frontend.js?ver=1.6.1.2'></script>
-<script type='text/javascript' src='/wp-content/plugins/wp-jquery-lightbox/jquery.touchwipe.min.js?ver=1.4.6'></script>
-<script type='text/javascript'>
+<script type='text/javascript' src='/wp-content/themes/tempera/js/frontend.js?ver=1.6.1.2' id='tempera-frontend-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wp-jquery-lightbox/jquery.touchwipe.min.js?ver=1.4.6' id='wp-jquery-lightbox-swipe-js'></script>
+<script type='text/javascript' id='wp-jquery-lightbox-js-extra'>
 /* <![CDATA[ */
 var JQLBSettings = {"showTitle":"1","showCaption":"1","showNumbers":"1","fitToScreen":"1","resizeSpeed":"300","showDownload":"0","navbarOnTop":"0","marginSize":"0","slideshowSpeed":"4000","prevLinkTitle":"previous image","nextLinkTitle":"next image","closeTitle":"close image gallery","image":"Image ","of":" of ","download":"Download","pause":"(pause slideshow)","play":"(play slideshow)"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/wp-jquery-lightbox/jquery.lightbox.min.js?ver=1.4.6'></script>
-<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.9.15'></script>
-<script type='text/javascript' src='/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_instagram.min.js?ver=1.2.11'></script>
-<script type='text/javascript'>
+<script type='text/javascript' src='/wp-content/plugins/wp-jquery-lightbox/jquery.lightbox.min.js?ver=1.4.6' id='wp-jquery-lightbox-js'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=5.5.1' id='wp-embed-js'></script>
+<script type='text/javascript' src='/wp-includes/js/underscore.min.js?ver=1.8.3' id='underscore-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/jquery.lazyload.min.js?ver=2.4.7' id='wdi_lazy_load-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_instagram.min.js?ver=2.4.7' id='wdi_instagram-js'></script>
+<script type='text/javascript' id='wdi_frontend-js-extra'>
 /* <![CDATA[ */
-var wdi_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
-var wdi_url = {"plugin_url":"\/wp-content\/plugins\/wd-instagram-feed\/frontend\/","ajax_url":"\/wp-admin\/admin-ajax.php"};
-var wdi_front_messages = {"connection_error":"Connection Error, try again later :(","user_not_found":"Username not found","network_error":"Network error, please try again later :(","hashtag_nodata":"There is no data for that hashtag","filter_title":"Click to filter images by this user","invalid_users_format":"Provided feed users are invalid or obsolete for this version of plugin","feed_nomedia":"There is no media in this feed","follow":"Follow","show_alerts":""};
-var wdi_feed_0 = {"feed_row":{"thumb_user":"lynnmehta","feed_name":"Sample Feed","feed_thumb":"https:\/\/scontent.cdninstagram.com\/t51.2885-19\/s150x150\/11348240_483778538454157_1438223555_a.jpg","published":"1","theme_id":"1","feed_users":"[{\"username\":\"lynnmehta\",\"id\":\"1998699072\"}]","feed_display_view":"load_more_btn","sort_images_by":"date","display_order":"desc","follow_on_instagram_btn":"1","display_header":"0","number_of_photos":"4","load_more_number":"4","pagination_per_page_number":"10","pagination_preload_number":"10","image_browser_preload_number":"10","image_browser_load_number":"10","number_of_columns":"1","resort_after_load_more":"0","show_likes":"1","show_description":"0","show_comments":"1","show_usernames":"0","display_user_info":"1","display_user_post_follow_number":"1","show_full_description":"1","disable_mobile_layout":"0","feed_type":"thumbnails","feed_item_onclick":"lightbox","popup_fullscreen":"0","popup_width":"640","popup_height":"640","popup_type":"none","popup_autoplay":"0","popup_interval":"5","popup_enable_filmstrip":"0","popup_filmstrip_height":"70","autohide_lightbox_navigation":"1","popup_enable_ctrl_btn":"1","popup_enable_fullscreen":"1","popup_enable_info":"0","popup_info_always_show":"0","popup_info_full_width":"0","popup_enable_comment":"0","popup_enable_fullsize_image":"1","popup_enable_download":"0","popup_enable_share_buttons":"0","popup_enable_facebook":"0","popup_enable_twitter":"0","popup_enable_google":"0","popup_enable_pinterest":"0","popup_enable_tumblr":"0","show_image_counts":"0","enable_loop":"1","popup_image_right_click":"1","conditional_filters":"","conditional_filter_type":"none","show_username_on_thumb":"0","conditional_filter_enable":"0","liked_feed":"userhash","mobile_breakpoint":"640","redirect_url":"","id":"1","widget":true,"access_token":"1998699072.54da896.1ceece305ff24a228ef5d394e9624132","wdi_feed_counter":0},"data":[],"usersData":[],"dataCount":"0"};
+var wdi_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php","wdi_nonce":"f17410bbcb","WDI_MINIFY":"true"};
+var wdi_url = {"plugin_url":"\/wp-content\/plugins\/wd-instagram-feed\/","ajax_url":"\/wp-admin\/admin-ajax.php"};
+var wdi_front_messages = {"connection_error":"Connection Error, try again later :(","user_not_found":"Username not found","network_error":"Network error, please try again later :(","hashtag_nodata":"There is no data for that hashtag","filter_title":"Click to filter images by this user","invalid_users_format":"Provided feed users are invalid or obsolete for this version of plugin","feed_nomedia":"There is no media in this feed","expired_token":"Error: Access token session has expired, please reauthorize access token","follow":"Follow","show_alerts":"","wdi_token_flag_nonce":"55feb9fbb7","wdi_token_error_flag":""};
+var wdi_object = {"user":{"type":"personal","user_id":"17841402012169837","user_name":"lynnmehta","access_token":"IGQVJWR0RJd09jRDEtbjgxM2lDdnN2Q2ZAneDFFa2EwUzg3OEZAwV2RWbzcyeXNnaDZAVaHA3eDZA0SG9DVU1lR2c4ZAHdEcXdDRTV1Q1hSbWswYmlpWWYyQU1aUnBYeUJuM2tzVUl0RVFR","start_in":1603994253,"expires_in":"5184000"}};
+var wdi_feed_0 = {"feed_row":{"thumb_user":"lynnmehta","feed_name":"Sample Feed","feed_thumb":"https:\/\/scontent.cdninstagram.com\/t51.2885-19\/s150x150\/11348240_483778538454157_1438223555_a.jpg","published":"1","theme_id":"1","feed_users":"[{\"username\":\"lynnmehta\",\"id\":\"1998699072\"}]","feed_display_view":"load_more_btn","sort_images_by":"date","display_order":"desc","follow_on_instagram_btn":"1","display_header":"0","number_of_photos":"4","load_more_number":"4","pagination_per_page_number":"10","pagination_preload_number":"10","image_browser_preload_number":"10","image_browser_load_number":"10","number_of_columns":"1","resort_after_load_more":"0","show_likes":"1","show_description":"0","show_comments":"1","show_usernames":"0","display_user_info":"1","display_user_post_follow_number":"1","show_full_description":"1","disable_mobile_layout":"0","feed_type":"thumbnails","feed_item_onclick":"lightbox","popup_fullscreen":"0","popup_width":"640","popup_height":"640","popup_type":"none","popup_autoplay":"0","popup_interval":"5","popup_enable_filmstrip":"0","popup_filmstrip_height":"70","autohide_lightbox_navigation":"1","popup_enable_ctrl_btn":"1","popup_enable_fullscreen":"1","popup_enable_info":"0","popup_info_always_show":"0","popup_info_full_width":"0","popup_enable_comment":"0","popup_enable_fullsize_image":"1","popup_enable_download":"0","popup_enable_share_buttons":"0","popup_enable_facebook":"0","popup_enable_twitter":"0","popup_enable_google":"0","popup_enable_pinterest":"0","popup_enable_tumblr":"0","show_image_counts":"0","enable_loop":"1","popup_image_right_click":"1","conditional_filters":"","conditional_filter_type":"none","show_username_on_thumb":"0","conditional_filter_enable":"0","liked_feed":"userhash","mobile_breakpoint":"640","redirect_url":"","feed_resolution":"optimal","hashtag_top_recent":"1","id":"1","nothing_to_display":"0","username":"lynnmehta","widget":true,"access_token":"IGQVJWR0RJd09jRDEtbjgxM2lDdnN2Q2ZAneDFFa2EwUzg3OEZAwV2RWbzcyeXNnaDZAVaHA3eDZA0SG9DVU1lR2c4ZAHdEcXdDRTV1Q1hSbWswYmlpWWYyQU1aUnBYeUJuM2tzVUl0RVFR","wdi_feed_counter":0},"data":[],"usersData":[],"dataCount":"0"};
+var wdi_theme_1 = {"theme_name":"Instagram","default_theme":"1","feed_container_bg_color":"#FFFFFF","feed_wrapper_width":"100%","feed_container_width":"100%","feed_wrapper_bg_color":"#FFFFFF","active_filter_bg_color":"#429fff","header_margin":"0px","header_padding":"5px","header_border_size":"0px","header_border_color":"#DDDDDD","header_position":"left","header_img_width":"40","header_border_radius":"0","header_text_padding":"5px","header_text_color":"#0f4973","header_font_weight":"400","header_text_font_size":"18px","header_text_font_style":"normal","follow_btn_border_radius":"3","follow_btn_padding":"25","follow_btn_margin":"10","follow_btn_bg_color":"#ffffff","follow_btn_border_color":"#0f4973","follow_btn_text_color":"#0f4973","follow_btn_font_size":"18","follow_btn_border_hover_color":"#0f4973","follow_btn_text_hover_color":"#0f4973","follow_btn_background_hover_color":"#ffffff","user_padding":"5px","user_horizontal_margin":"","user_border_size":"0px","user_border_color":"","user_img_width":"40","user_border_radius":"40","user_background_color":"","users_border_size":"0px","users_border_color":"","users_background_color":"","users_text_color":"#0f4973","users_font_weight":"400","users_text_font_size":"18px","users_text_font_style":"normal","user_description_font_size":"14px","lightbox_overlay_bg_color":"#25292c","lightbox_overlay_bg_transparent":"90","lightbox_bg_color":"#ffffff","lightbox_ctrl_btn_height":"20","lightbox_ctrl_btn_margin_top":"10","lightbox_ctrl_btn_margin_left":"7","lightbox_ctrl_btn_pos":"bottom","lightbox_ctrl_cont_bg_color":"#2a5b83","lightbox_ctrl_cont_border_radius":"4","lightbox_ctrl_cont_transparent":"80","lightbox_ctrl_btn_align":"center","lightbox_ctrl_btn_color":"#FFFFFF","lightbox_ctrl_btn_transparent":"100","lightbox_toggle_btn_height":"14","lightbox_toggle_btn_width":"100","lightbox_close_btn_border_radius":"16","lightbox_close_btn_border_width":"2","lightbox_close_btn_border_style":"none","lightbox_close_btn_border_color":"#FFFFFF","lightbox_close_btn_box_shadow":"none","lightbox_close_btn_bg_color":"#2a5b83","lightbox_close_btn_transparent":"100","lightbox_close_btn_width":"20","lightbox_close_btn_height":"20","lightbox_close_btn_top":"-10","lightbox_close_btn_right":"-10","lightbox_close_btn_size":"15","lightbox_close_btn_color":"#FFFFFF","lightbox_close_btn_full_color":"#000000","lightbox_close_btn_hover_color":"#000000","lightbox_comment_share_button_color":"#ffffff","lightbox_rl_btn_style":"fa-chevron","lightbox_rl_btn_bg_color":"#2a5b83","lightbox_rl_btn_transparent":"80","lightbox_rl_btn_box_shadow":"none","lightbox_rl_btn_height":"40","lightbox_rl_btn_width":"40","lightbox_rl_btn_size":"20","lightbox_close_rl_btn_hover_color":"#25292c","lightbox_rl_btn_color":"#FFFFFF","lightbox_rl_btn_border_radius":"20","lightbox_rl_btn_border_width":"0","lightbox_rl_btn_border_style":"none","lightbox_rl_btn_border_color":"#FFFFFF","lightbox_filmstrip_pos":"top","lightbox_filmstrip_thumb_margin":"0 1px","lightbox_filmstrip_thumb_border_width":"1","lightbox_filmstrip_thumb_border_style":"solid","lightbox_filmstrip_thumb_border_color":"#25292c","lightbox_filmstrip_thumb_border_radius":"0","lightbox_filmstrip_thumb_active_border_width":"0","lightbox_filmstrip_thumb_active_border_color":"#FFFFFF","lightbox_filmstrip_thumb_deactive_transparent":"70","lightbox_filmstrip_rl_btn_size":"20","lightbox_filmstrip_rl_btn_color":"#FFFFFF","lightbox_filmstrip_rl_bg_color":"#3B3B3B","lightbox_info_pos":"top","lightbox_info_align":"right","lightbox_info_bg_color":"#3b3b3b","lightbox_info_bg_transparent":"80","lightbox_info_border_width":"1","lightbox_info_border_style":"none","lightbox_info_border_color":"#3b3b3b","lightbox_info_border_radius":"5","lightbox_info_padding":"5px","lightbox_info_margin":"15px","lightbox_title_color":"#FFFFFF","lightbox_title_font_style":"segoe ui","lightbox_title_font_weight":"bold","lightbox_title_font_size":"13","lightbox_description_color":"#FFFFFF","lightbox_description_font_style":"segoe ui","lightbox_description_font_weight":"normal","lightbox_description_font_size":"14","lightbox_info_height":"30","lightbox_comment_width":"400","lightbox_comment_pos":"right","lightbox_comment_bg_color":"#ffffff","lightbox_comment_font_size":"12","lightbox_comment_font_color":"#000000","lightbox_comment_font_style":"segoe ui","lightbox_comment_author_font_size":"14","lightbox_comment_author_font_color":"#125688","lightbox_comment_author_font_color_hover":"#002160","lightbox_comment_date_font_size":"10","lightbox_comment_body_font_size":"12","lightbox_comment_input_border_width":"1","lightbox_comment_input_border_style":"none","lightbox_comment_input_border_color":"#666666","lightbox_comment_input_border_radius":"0","lightbox_comment_input_padding":"2px","lightbox_comment_input_bg_color":"#333333","lightbox_comment_button_bg_color":"#616161","lightbox_comment_button_padding":"3px 10px","lightbox_comment_button_border_width":"1","lightbox_comment_button_border_style":"none","lightbox_comment_button_border_color":"#666666","lightbox_comment_button_border_radius":"3","lightbox_comment_separator_width":"1","lightbox_comment_separator_style":"solid","lightbox_comment_separator_color":"#125688","lightbox_comment_load_more_color":"#125688","lightbox_comment_load_more_color_hover":"#000000","th_photo_wrap_padding":"5px","th_photo_wrap_border_size":"5px","th_photo_wrap_border_color":"#ffffff","th_photo_img_border_radius":"0px","th_photo_wrap_bg_color":"#FFFFFF","th_photo_meta_bg_color":"#FFFFFF","th_photo_meta_one_line":"1","th_like_text_color":"#8a8d8e","th_comment_text_color":"#8a8d8e","th_photo_caption_font_size":"14px","th_photo_caption_color":"#125688","th_feed_item_margin":"0","th_photo_caption_hover_color":"#8e8e8e","th_like_comm_font_size":"13px","th_overlay_hover_color":"#125688","th_overlay_hover_transparent":"50","th_overlay_hover_icon_color":"#FFFFFF","th_overlay_hover_icon_font_size":"25px","th_photo_img_hover_effect":"","mas_photo_wrap_padding":"5px","mas_photo_wrap_border_size":"0px","mas_photo_wrap_border_color":"gray","mas_photo_img_border_radius":"0px","mas_photo_wrap_bg_color":"#FFFFFF","mas_photo_meta_bg_color":"#FFFFFF","mas_photo_meta_one_line":"1","mas_like_text_color":"#8a8d8e","mas_comment_text_color":"#8a8d8e","mas_photo_caption_font_size":"14px","mas_photo_caption_color":"#125688","mas_feed_item_margin":"0","mas_photo_caption_hover_color":"#8e8e8e","mas_like_comm_font_size":"13px","mas_overlay_hover_color":"#125688","mas_overlay_hover_transparent":"50","mas_overlay_hover_icon_color":"#FFFFFF","mas_overlay_hover_icon_font_size":"25px","mas_photo_img_hover_effect":"","blog_style_photo_wrap_padding":"5px","blog_style_photo_wrap_border_size":"0px","blog_style_photo_wrap_border_color":"gray","blog_style_photo_img_border_radius":"0px","blog_style_photo_wrap_bg_color":"#FFFFFF","blog_style_photo_meta_bg_color":"#FFFFFF","blog_style_photo_meta_one_line":"1","blog_style_like_text_color":"#8a8d8e","blog_style_comment_text_color":"#8a8d8e","blog_style_photo_caption_font_size":"16px","blog_style_photo_caption_color":"#125688","blog_style_feed_item_margin":"0","blog_style_photo_caption_hover_color":"#8e8e8e","blog_style_like_comm_font_size":"20px","image_browser_photo_wrap_padding":"5px","image_browser_photo_wrap_border_size":"0px","image_browser_photo_wrap_border_color":"gray","image_browser_photo_img_border_radius":"0px","image_browser_photo_wrap_bg_color":"#FFFFFF","image_browser_photo_meta_bg_color":"#FFFFFF","image_browser_photo_meta_one_line":"1","image_browser_like_text_color":"#8a8d8e","image_browser_comment_text_color":"#8a8d8e","image_browser_photo_caption_font_size":"16px","image_browser_photo_caption_color":"#125688","image_browser_feed_item_margin":"0","image_browser_photo_caption_hover_color":"#8e8e8e","image_browser_like_comm_font_size":"20px","load_more_position":"center","load_more_padding":"4px","load_more_bg_color":"#ffffff","load_more_border_radius":"500px","load_more_height":"90px","load_more_width":"90px","load_more_border_size":"1px","load_more_border_color":"#0f4973","load_more_text_color":"#1e73be","load_more_text_font_size":"14px","load_more_wrap_hover_color":"transparent","pagination_ctrl_color":"#0f4973","pagination_size":"36px","pagination_ctrl_margin":"15px","pagination_ctrl_hover_color":"#25292c","pagination_position":"center","pagination_position_vert":"top","th_thumb_user_bg_color":"","th_thumb_user_color":"","mas_thumb_user_bg_color":"","mas_thumb_user_color":"","id":"1"};
 var wdi_front = {"feed_counter":"0"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_frontend.min.js?ver=1.2.11'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_responsive.min.js?ver=1.2.11'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.mobile.js?ver=1.2.11'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.mCustomScrollbar.concat.min.js?ver=1.2.11'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.fullscreen-0.4.1.js?ver=1.2.11'></script>
-<script type='text/javascript'>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_frontend.min.js?ver=2.4.7' id='wdi_frontend-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_responsive.min.js?ver=2.4.7' id='wdi_responsive-js'></script>
+<script type='text/javascript' id='wdi_gallery_box-js-extra'>
 /* <![CDATA[ */
 var wdi_objectL10n = {"wdi_field_required":"Field is required.","wdi_mail_validation":"This is not a valid email address.","wdi_search_result":"There are no images matching your search."};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/wdi_gallery_box.min.js?ver=1.2.11'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/wdi_gallery_box.min.js?ver=2.4.7' id='wdi_gallery_box-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.mobile.js?ver=2.4.7' id='jquery-mobile-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.mCustomScrollbar.concat.min.js?ver=2.4.7' id='jquery-mCustomScrollbar-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.fullscreen-0.4.1.js?ver=2.4.7' id='jquery-fullscreen-js'></script>
 	<script type="text/javascript">
 	var cryout_global_content_width = 900;
 	var cryout_toTop_offset = 1150;

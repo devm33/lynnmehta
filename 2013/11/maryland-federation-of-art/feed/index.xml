@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: December at Maryland Federation of Art</title>
+	<title>
+	Comments on: December at Maryland Federation of Art	</title>
 	<atom:link href="/2013/11/maryland-federation-of-art/feed/" rel="self" type="application/rss+xml" />
 	<link>/2013/11/maryland-federation-of-art/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Fri, 03 Jan 2014 00:51:20 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

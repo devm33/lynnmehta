@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: Plein Air Shenandoah</title>
+	<title>
+	Comments on: Plein Air Shenandoah	</title>
 	<atom:link href="/2014/08/plein-air-shenandoah/feed/" rel="self" type="application/rss+xml" />
 	<link>/2014/08/plein-air-shenandoah/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Fri, 14 Nov 2014 14:56:32 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>

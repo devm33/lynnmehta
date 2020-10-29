@@ -10,9 +10,14 @@
 <link rel="alternate" type="application/rss+xml" title="Lynn Mehta Fine Art &raquo; Feed" href="/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Lynn Mehta Fine Art &raquo; Comments Feed" href="/comments/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Lynn Mehta Fine Art &raquo; Marine Comments Feed" href="/paintings/marine/feed/" />
-<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.6 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.12.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <script type="text/javascript" data-cfasync="false">
-		var disableStr = 'ga-disable-UA-30388496-1';
+    (window.gaDevIds=window.gaDevIds||[]).push("dZGIzZG");
+	var mi_version         = '7.12.3';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-30388496-1';
 
 	/* Function to detect opted out users */
 	function __gaTrackerIsOptedOut() {
@@ -29,19 +34,71 @@
 	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
 	  window[disableStr] = true;
 	}
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
 
-	__gaTracker('create', 'UA-30388496-1', 'auto');
-	__gaTracker('set', 'forceSSL', true);
-	__gaTracker('send','pageview');
+	if ( 'undefined' === typeof gaOptout ) {
+		function gaOptout() {
+			__gaTrackerOptout();
+		}
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-30388496-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
 </script>
 <!-- / Google Analytics by MonsterInsights -->
 		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.15"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
 		</script>
 		<style type="text/css">
 img.wp-smiley,
@@ -57,31 +114,36 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css?ver=5.5.1' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-facebook-likebox-plugin-styles-css'  href='/wp-content/plugins/easy-facebook-likebox/public/assets/css/public.css?ver=4.3.5' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-facebook-likebox-font-awesome-css'  href='/wp-content/plugins/easy-facebook-likebox/public/assets/css/font-awesome.css?ver=4.3.5' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-facebook-likebox-animate-css'  href='/wp-content/plugins/easy-facebook-likebox/public/assets/css/animate.css?ver=4.3.5' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-facebook-likebox-popup-styles-css'  href='/wp-content/plugins/easy-facebook-likebox/public/assets/popup/magnific-popup.css?ver=4.3.5' type='text/css' media='all' />
 <link rel='stylesheet' id='page-list-style-css'  href='/wp-content/plugins/page-list/css/page-list.css?ver=5.1' type='text/css' media='all' />
-<link rel='stylesheet' id='parent-style-css'  href='/wp-content/themes/tempera/style.css?ver=4.9.15' type='text/css' media='all' />
-<link rel='stylesheet' id='child-style-css'  href='/wp-content/themes/lynnmehta_tempura/style.css?ver=4.9.15' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='/wp-content/themes/tempera/style.css?ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='child-style-css'  href='/wp-content/themes/lynnmehta_tempura/style.css?ver=5.5.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tempera-fonts-css'  href='/wp-content/themes/tempera/fonts/fontfaces.css?ver=1.6.1.2' type='text/css' media='all' />
 <link rel='stylesheet' id='tempera-style-css'  href='/wp-content/themes/lynnmehta_tempura/style.css?ver=1.6.1.2' type='text/css' media='all' />
 <link rel='stylesheet' id='jquery.lightbox.min.css-css'  href='/wp-content/plugins/wp-jquery-lightbox/styles/lightbox.min.css?ver=1.4.6' type='text/css' media='all' />
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/popup/jquery.magnific-popup.min.js?ver=4.3.5'></script>
-<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/js/jquery.cookie.js?ver=4.3.5'></script>
-<script type='text/javascript'>
+<script type='text/javascript' id='monsterinsights-frontend-script-js-extra'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=7.12.3' id='monsterinsights-frontend-script-js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/popup/jquery.magnific-popup.min.js?ver=4.3.5' id='easy-facebook-likebox-popup-script-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/js/jquery.cookie.js?ver=4.3.5' id='easy-facebook-likebox-cookie-script-js'></script>
+<script type='text/javascript' id='easy-facebook-likebox-public-script-js-extra'>
 /* <![CDATA[ */
 var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/js/public.js?ver=4.3.5'></script>
-<link rel='https://api.w.org/' href='/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<script type='text/javascript' src='/wp-content/plugins/easy-facebook-likebox/public/assets/js/public.js?ver=4.3.5' id='easy-facebook-likebox-public-script-js'></script>
+<link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/1109" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.9.15" />
+<meta name="generator" content="WordPress 5.5.1" />
 <link rel="canonical" href="/paintings/marine/" />
 <link rel='shortlink' href='/?p=1109' />
 <link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fpaintings%2Fmarine%2F" />
@@ -122,7 +184,7 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 	<li id="menu-item-1688" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1688"><a href="/paintings/landscapes-i/"><span>Landscapes</span></a></li>
 	<li id="menu-item-1104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1104"><a href="/paintings/landscapes-ii/"><span>Rural Scenes</span></a></li>
 	<li id="menu-item-967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-967"><a href="/paintings/town/"><span>Street Scenes</span></a></li>
-	<li id="menu-item-1114" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1109 current_page_item menu-item-1114"><a href="/paintings/marine/"><span>Marine</span></a></li>
+	<li id="menu-item-1114" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1109 current_page_item menu-item-1114"><a href="/paintings/marine/" aria-current="page"><span>Marine</span></a></li>
 	<li id="menu-item-2345" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2345"><a href="/still-life/"><span>Still Life</span></a></li>
 	<li id="menu-item-2090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2090"><a href="/paintings/archives-i/"><span>Archives I</span></a></li>
 	<li id="menu-item-2093" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2093"><a href="/paintings/archives-ii/"><span>Archives II</span></a></li>
@@ -155,6 +217,7 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 					
 					<div class="entry-content">
 						<p><strong>I grew up along the ocean. My spirits are always uplifted by the scent of salt air. My imagination is triggered by fishermen&#8217;s shacks, marinas, and old boats.</strong></p>
+<p>&nbsp;</p>
 <p>
 					
 
@@ -164,381 +227,81 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 			<div id='unitegallery_5_1' class='unite-gallery' style='margin:0px auto;'>
 				
 
-						<img alt="Tallinn Overlook 9x12 sold"
-						     src="" data-image="/wp-content/uploads/2020/01/TallinOverlook9x12.jpg"
-						     data-thumb="/wp-content/uploads/2020/01/TallinOverlook9x12-300x222.jpg"
+						<img alt="Clear Day in Navarre 10x10"
+						     src="" data-image="/wp-content/uploads/2018/08/ClearDayinNavarre_10x10_website.jpg"
+						     data-thumb="/wp-content/uploads/2018/08/ClearDayinNavarre_10x10_website-294x300.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Old Dock House 18x14"
-						     src="" data-image="/wp-content/uploads/2020/01/Mehta_OldDockHouse.jpg"
-						     data-thumb="/wp-content/uploads/2020/01/Mehta_OldDockHouse-219x300.jpg"
+						<img alt="Purple Haze in Navarre 10x10"
+						     src="" data-image="/wp-content/uploads/2018/08/PurpleHazeinNavarre_10x10_website.jpg"
+						     data-thumb="/wp-content/uploads/2018/08/PurpleHazeinNavarre_10x10_website-295x300.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Mobjack Bay 36x36"
-						     src="" data-image="/wp-content/uploads/2019/06/websiteMobjackBay36x36.jpeg"
-						     data-thumb="/wp-content/uploads/2019/06/websiteMobjackBay36x36-300x295.jpeg"
+						<img alt="Quiet Cove 14x17"
+						     src="" data-image="/wp-content/uploads/2017/03/QuietCove14x17_tempura.jpg"
+						     data-thumb="/wp-content/uploads/2017/03/QuietCove14x17_tempura-300x265.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Two Pears and Peonies 9x12"
-						     src="" data-image="/wp-content/uploads/2019/06/websiteTwoPearsandPeonies9x12.jpeg"
-						     data-thumb="/wp-content/uploads/2019/06/websiteTwoPearsandPeonies9x12-300x248.jpeg"
+						<img alt="Rising Tide on the Peninsula 10x10"
+						     src="" data-image="/wp-content/uploads/2017/12/website_RisingTideonthePeninsula.jpg"
+						     data-thumb="/wp-content/uploads/2017/12/website_RisingTideonthePeninsula-300x296.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Blue Lotus Pond 12x12"
-						     src="" data-image="/wp-content/uploads/2018/10/website_BlueLotusPond12x12.jpg"
-						     data-thumb="/wp-content/uploads/2018/10/website_BlueLotusPond12x12-300x298.jpg"
+						<img alt="Backyard North Carolina 11x14"
+						     src="" data-image="/wp-content/uploads/2017/03/BackyardNorthCarolina11x14_tempura.jpg"
+						     data-thumb="/wp-content/uploads/2017/03/BackyardNorthCarolina11x14_tempura-300x239.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Tied Together at Dock 9x12"
-						     src="" data-image="/wp-content/uploads/2018/08/TiedTogetheratDock_9x12_website-3.jpg"
-						     data-thumb="/wp-content/uploads/2018/08/TiedTogetheratDock_9x12_website-3-300x212.jpg"
+						<img alt="Galesville Harbor 8x16"
+						     src="" data-image="/wp-content/uploads/2018/12/websiteGalesvilleHarbor.jpg"
+						     data-thumb="/wp-content/uploads/2018/12/websiteGalesvilleHarbor-300x145.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Sunshine on Frenchman Bay 8x10"
-						     src="" data-image="/wp-content/uploads/2017/08/SunshineonFrenchmanBay.jpg"
-						     data-thumb="/wp-content/uploads/2017/08/SunshineonFrenchmanBay-300x147.jpg"
+						<img alt="Winter Sun on the Harbor 10x10"
+						     src="" data-image="/wp-content/uploads/2018/12/websiteWinterSunontheHarbor.jpg"
+						     data-thumb="/wp-content/uploads/2018/12/websiteWinterSunontheHarbor-300x300.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Rainy Day in DC 9x12"
-						     src="" data-image="/wp-content/uploads/2018/12/websiteRainyDayinDC.jpg"
-						     data-thumb="/wp-content/uploads/2018/12/websiteRainyDayinDC-236x300.jpg"
+						<img alt="In the Tidewater 24x18"
+						     src="" data-image="/wp-content/uploads/2020/01/Mehta_Capahosic.jpeg"
+						     data-thumb="/wp-content/uploads/2020/01/Mehta_Capahosic-226x300.jpeg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Dordogne 6 x 8"
-						     src="" data-image="/wp-content/uploads/2018/12/websiteTopoftheHillFarmDordogne.jpg"
-						     data-thumb="/wp-content/uploads/2018/12/websiteTopoftheHillFarmDordogne-300x217.jpg"
+						<img alt="Light Dancing Downstream 30x40"
+						     src="" data-image="/wp-content/uploads/2020/01/Mehta_LightDancingDownstream.jpeg"
+						     data-thumb="/wp-content/uploads/2020/01/Mehta_LightDancingDownstream-300x224.jpeg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Great Head 6x6"
-						     src="" data-image="/wp-content/uploads/2017/08/GreatHead-e1504193722939.jpg"
-						     data-thumb="/wp-content/uploads/2017/08/GreatHead-e1504193722939-300x294.jpg"
+						<img alt="Morning Musings"
+						     src="" data-image="/wp-content/uploads/2020/01/Mehta_MorningMusings.jpg"
+						     data-thumb="/wp-content/uploads/2020/01/Mehta_MorningMusings-300x219.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Back Side 12 x 16"
-						     src="" data-image="/wp-content/uploads/2018/12/websiteBackside.jpg"
-						     data-thumb="/wp-content/uploads/2018/12/websiteBackside-300x205.jpg"
+						<img alt="Display of Time Past 12x9"
+						     src="" data-image="/wp-content/uploads/2020/01/OnDisplay_12x9.jpeg"
+						     data-thumb="/wp-content/uploads/2020/01/OnDisplay_12x9-222x300.jpeg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Work Day 14 x 18"
-						     src="" data-image="/wp-content/uploads/2018/12/websiteEastBeachworkday.jpg"
-						     data-thumb="/wp-content/uploads/2018/12/websiteEastBeachworkday-300x233.jpg"
+						<img alt="Coming Into Harbor 14x18"
+						     src="" data-image="/wp-content/uploads/2020/01/ComingIntoHarbor14x18-1.jpg"
+						     data-thumb="/wp-content/uploads/2020/01/ComingIntoHarbor14x18-1-300x232.jpg"
 						     title=""
 						     style="display:none">
 
-						<img alt="Letting in and Letting Go 16x20"
-						     src="" data-image="/wp-content/uploads/2017/12/website_LettinginandLettingGo_16x20.jpg"
-						     data-thumb="/wp-content/uploads/2017/12/website_LettinginandLettingGo_16x20-300x235.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Barnyard Brandywine Valley 10 x 10"
-						     src="" data-image="/wp-content/uploads/2018/12/websiteBarnyardBrandywineValley.jpg"
-						     data-thumb="/wp-content/uploads/2018/12/websiteBarnyardBrandywineValley-300x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Main Street 12x12"
-						     src="" data-image="/wp-content/uploads/2018/02/MainStreet12x12_website.jpg"
-						     data-thumb="/wp-content/uploads/2018/02/MainStreet12x12_website-291x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Across the Sound 8x10"
-						     src="" data-image="/wp-content/uploads/2017/12/website_AcrosstheSound_8x10.jpg"
-						     data-thumb="/wp-content/uploads/2017/12/website_AcrosstheSound_8x10-300x233.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Above the Falls 14x18"
-						     src="" data-image="/wp-content/uploads/2017/08/AbovetheFalls14x18-e1514588269451.jpg"
-						     data-thumb="/wp-content/uploads/2017/08/AbovetheFalls14x18-e1504194992440-300x235.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Sledders 10x10"
-						     src="" data-image="/wp-content/uploads/2017/04/sledders_sold.jpg"
-						     data-thumb="/wp-content/uploads/2017/04/sledders_sold-300x297.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Still Pond 9x12"
-						     src="" data-image="/wp-content/uploads/2017/03/StillPond_tempura-e1514587323736.jpg"
-						     data-thumb="/wp-content/uploads/2017/03/StillPond_tempura-300x225.jpg"
-						     title="Rural painting, yellow field, distant farm, small pond, broken light."
-						     style="display:none">
-
-						<img alt="Boats on Icy River 12x12"
-						     src="" data-image="/wp-content/uploads/2017/03/BoatsonIcyRiver12x12_tempura-e1514587232431.jpg"
-						     data-thumb="/wp-content/uploads/2017/03/BoatsonIcyRiver12x12_tempura-295x300.jpg"
-						     title="Sailing school after winter snow."
-						     style="display:none">
-
-						<img alt="Henbit 8x12"
-						     src="" data-image="/wp-content/uploads/2017/03/Henbit8x12_tempura-e1514587903371.jpg"
-						     data-thumb="/wp-content/uploads/2017/03/Henbit8x12_tempura-300x242.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="In Front of the Coffee Shop 12x12"
-						     src="" data-image="/wp-content/uploads/2017/02/IMG_4515-e1486682503633.jpg"
-						     data-thumb="/wp-content/uploads/2017/02/IMG_4515-e1486682503633-300x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Boats on the Loire 8 x 16"
-						     src="" data-image="/wp-content/uploads/2017/02/IMG_0828-e1486666121408.jpg"
-						     data-thumb="/wp-content/uploads/2017/02/IMG_0828-e1486666121408-300x152.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Boat on the Loire, 12x16"
-						     src="" data-image="/wp-content/uploads/2017/02/IMG_0819-e1486669393898.jpg"
-						     data-thumb="/wp-content/uploads/2017/02/IMG_0819-e1486669393898-300x225.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Snow Shadows 10x8"
-						     src="" data-image="/wp-content/uploads/2017/02/IMG_0748-e1486667071251.jpg"
-						     data-thumb="/wp-content/uploads/2017/02/IMG_0748-e1486667071251-233x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Vernal Pond and Pink Granite 8x16"
-						     src="" data-image="/wp-content/uploads/2017/02/LynnMehta_VernalPondandPinkGranite_8x16_-800-e1486662695626.jpg"
-						     data-thumb="/wp-content/uploads/2017/02/LynnMehta_VernalPondandPinkGranite_8x16_-800-e1486662695626-149x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Maine Rocks 12x16"
-						     src="" data-image="/wp-content/uploads/2017/02/Mehta_MaineRocks-e1486664700204.jpg"
-						     data-thumb="/wp-content/uploads/2017/02/Mehta_MaineRocks-e1486664700204-300x224.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Barns 14 x 18"
-						     src="" data-image="/wp-content/uploads/2016/05/Barn-Roofs-at-Polyface-Farms-e1462483872107.jpg"
-						     data-thumb="/wp-content/uploads/2016/05/Barn-Roofs-at-Polyface-Farms-e1462483872107-300x235.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Chadds Ford in February 8x10"
-						     src="" data-image="/wp-content/uploads/2016/05/ChaddsFordinFebruary-e1462483676474.jpg"
-						     data-thumb="/wp-content/uploads/2016/05/ChaddsFordinFebruary-e1462483676474-300x242.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Pacific Sunset 6x8"
-						     src="" data-image="/wp-content/uploads/2015/12/image-1-e1450722224264.jpeg"
-						     data-thumb="/wp-content/uploads/2015/12/image-1-e1450722224264-300x221.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Midnight Sea of Cortez"
-						     src="" data-image="/wp-content/uploads/2015/12/image34-e1450710766941.jpeg"
-						     data-thumb="/wp-content/uploads/2015/12/image34-e1450710766941-218x300.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Nevares Peak 8x16"
-						     src="" data-image="/wp-content/uploads/2015/12/image31-e1450711150469.jpeg"
-						     data-thumb="/wp-content/uploads/2015/12/image31-e1450711150469-300x144.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Late Afternoon Along the Sea 9x12"
-						     src="" data-image="/wp-content/uploads/2015/12/image30-e1450712826856.jpeg"
-						     data-thumb="/wp-content/uploads/2015/12/image30-e1450712826856-300x222.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Fishing Overcast Day 12x12"
-						     src="" data-image="/wp-content/uploads/2015/12/image28-e1450712756695.jpeg"
-						     data-thumb="/wp-content/uploads/2015/12/image28-e1450712756695-300x297.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="White Sands 9x12"
-						     src="" data-image="/wp-content/uploads/2015/12/image19-e1449323602840.jpeg"
-						     data-thumb="/wp-content/uploads/2015/12/image19-e1449323602840-300x232.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Pond Hockey at Hank's 6x12"
-						     src="" data-image="/wp-content/uploads/2015/11/Mehta_SkatingontheBrandywine-e1448311125199.jpg"
-						     data-thumb="/wp-content/uploads/2015/11/Mehta_SkatingontheBrandywine-e1448311125199-300x145.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Boat Launch 12x12"
-						     src="" data-image="/wp-content/uploads/2015/11/BoatLaunch12x12-e1489159680622.jpeg"
-						     data-thumb="/wp-content/uploads/2015/11/BoatLaunch12x12-e1489159680622-300x300.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Cows and Old Farmhouse 11x14"
-						     src="" data-image="/wp-content/uploads/2015/11/Mehta_CowsandOldFarmhouse-e1448311026461.jpg"
-						     data-thumb="/wp-content/uploads/2015/11/Mehta_CowsandOldFarmhouse-e1448311026461-300x223.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Dixon's View 8x16"
-						     src="" data-image="/wp-content/uploads/2015/11/DixonsView.jpg"
-						     data-thumb="/wp-content/uploads/2015/11/DixonsView-300x143.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Bathing at the Sea, 12 x 16"
-						     src="" data-image="/wp-content/uploads/2015/09/Mehta_BathingattheSea-e1442327005647.jpg"
-						     data-thumb="/wp-content/uploads/2015/09/Mehta_BathingattheSea-e1442327005647-300x220.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Harbor Light 8x16"
-						     src="" data-image="/wp-content/uploads/2015/01/HarboratDawn8x16.jpg"
-						     data-thumb="/wp-content/uploads/2015/01/HarboratDawn8x16-300x140.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Train Station 16x20"
-						     src="" data-image="/wp-content/uploads/2015/01/TrainStation16x20.jpg"
-						     data-thumb="/wp-content/uploads/2015/01/TrainStation16x20-300x241.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Watermens Shack 10x20"
-						     src="" data-image="/wp-content/uploads/2015/01/WatermensShack10x20.jpg"
-						     data-thumb="/wp-content/uploads/2015/01/WatermensShack10x20-300x147.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Fog at Field's Edge 6x6"
-						     src="" data-image="/wp-content/uploads/2015/01/FogonFieldsEdge6x6.jpg"
-						     data-thumb="/wp-content/uploads/2015/01/FogonFieldsEdge6x6-300x287.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Fishing Day 11x14"
-						     src="" data-image="/wp-content/uploads/2015/01/FishingDay11x14.jpg"
-						     data-thumb="/wp-content/uploads/2015/01/FishingDay11x14-300x230.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="The Ibis Pond 11x14"
-						     src="" data-image="/wp-content/uploads/2014/06/TheIbisPond11x14.jpg"
-						     data-thumb="/wp-content/uploads/2014/06/TheIbisPond11x14-300x233.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Oyster Boat"
-						     src="" data-image="/wp-content/uploads/2014/06/Oyster_Boat.jpg"
-						     data-thumb="/wp-content/uploads/2014/06/Oyster_Boat-300x297.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Morning Fog 14x18"
-						     src="" data-image="/wp-content/uploads/2014/06/MorningFog14x18.jpg"
-						     data-thumb="/wp-content/uploads/2014/06/MorningFog14x18-300x230.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Duck Blinds I"
-						     src="" data-image="/wp-content/uploads/2014/06/Duck_Blinds_I.jpg"
-						     data-thumb="/wp-content/uploads/2014/06/Duck_Blinds_I-300x298.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Morning Fishing 14x18"
-						     src="" data-image="/wp-content/uploads/2014/06/Morning_Fishing.jpg"
-						     data-thumb="/wp-content/uploads/2014/06/Morning_Fishing-300x235.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Turning 7x10"
-						     src="" data-image="/wp-content/uploads/2014/05/Turning_7x10.jpg"
-						     data-thumb="/wp-content/uploads/2014/05/Turning_7x10-194x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Palm Desert 9x12"
-						     src="" data-image="/wp-content/uploads/2014/05/Palm_Desert_9x12.jpg"
-						     data-thumb="/wp-content/uploads/2014/05/Palm_Desert_9x12-218x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Santa Lucia Hills 6x8"
-						     src="" data-image="/wp-content/uploads/2014/05/Santa_Lucia_Hills_6x8_SOLD.jpg"
-						     data-thumb="/wp-content/uploads/2014/05/Santa_Lucia_Hills_6x8_SOLD-300x211.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Palm Springs 9x12"
-						     src="" data-image="/wp-content/uploads/2014/05/Palm_Springs_9x12.jpg"
-						     data-thumb="/wp-content/uploads/2014/05/Palm_Springs_9x12-300x224.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="High Sierra Peaks 9x12 SOLD"
-						     src="" data-image="/wp-content/uploads/2014/05/High_Sierra_Peaks_9x12_SOLD.jpg"
-						     data-thumb="/wp-content/uploads/2014/05/High_Sierra_Peaks_9x12_SOLD-300x220.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Across the Valley 11x14"
-						     src="" data-image="/wp-content/uploads/2014/05/Across_the_Valley_11x14.jpg"
-						     data-thumb="/wp-content/uploads/2014/05/Across_the_Valley_11x14-234x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="On Stands 12x9 sold"
-						     src="" data-image="/wp-content/uploads/2020/01/OnStands_12x9.jpeg"
-						     data-thumb="/wp-content/uploads/2020/01/OnStands_12x9-224x300.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Cut Lemons and Flowers 12x12 sold"
-						     src="" data-image="/wp-content/uploads/2020/01/Mehta_CutLemonsandFlowers_oil_12x12.jpg"
-						     data-thumb="/wp-content/uploads/2020/01/Mehta_CutLemonsandFlowers_oil_12x12-300x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Main Street in the Rain 18x14"
-						     src="" data-image="/wp-content/uploads/2018/12/websiteMainStreetintheRain.jpg"
-						     data-thumb="/wp-content/uploads/2018/12/websiteMainStreetintheRain-226x300.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Horse Trailer and Barn 8x10 sold"
-						     src="" data-image="/wp-content/uploads/2020/01/HorseTrailerandBarn8x10.jpg"
-						     data-thumb="/wp-content/uploads/2020/01/HorseTrailerandBarn8x10-300x235.jpg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Marshland 11x14"
-						     src="" data-image="/wp-content/uploads/2019/06/websiteMarshland11x14.jpeg"
-						     data-thumb="/wp-content/uploads/2019/06/websiteMarshland11x14-300x245.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Dinghy in Waiting 12x10"
-						     src="" data-image="/wp-content/uploads/2020/01/Mehta_DinghyinWaiting.jpeg"
-						     data-thumb="/wp-content/uploads/2020/01/Mehta_DinghyinWaiting-235x300.jpeg"
-						     title=""
-						     style="display:none">
-
-						<img alt="Nutcracker 12x9"
-						     src="" data-image="/wp-content/uploads/2020/01/Mehta_Nutcracker.jpeg"
-						     data-thumb="/wp-content/uploads/2020/01/Mehta_Nutcracker-241x300.jpeg"
+						<img alt="Mystic, Conneticut 24x18"
+						     src="" data-image="/wp-content/uploads/2020/01/MysticConneticut24x18.jpg"
+						     data-thumb="/wp-content/uploads/2020/01/MysticConneticut24x18-222x300.jpg"
 						     title=""
 						     style="display:none">
 			</div>
@@ -567,8 +330,6 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 </div>
 		</li><li id="text-16" class="widget-container widget_text"><h3 class="widget-title">Individual Art Mentorship Online</h3>			<div class="textwidget"><p>During these trying times I am now offering online mentorship sessions. You determine what you want to focus on and we work with your individual learning style. Contact me directly and we can discuss a plan and schedule to meet your artistic goals.</p>
 </div>
-		</li><li id="text-17" class="widget-container widget_text"><h3 class="widget-title">Paint Annapolis &#8211; September/October 2020</h3>			<div class="textwidget"><p>Paint Annapolis will go forward this fall with a more reduced schedule and I am grateful to be able to participate. With a socially distanced plan, I will be painting on location September 20-24. Paintings will be on display at the Maryland Federation of Art through October 22. Artwork will be for sale online at <a href="https://mdfedart.com/">Maryland Federation of Art</a></p>
-</div>
 		</li><li id="easy_facebook_page_plugin-2" class="widget-container widget_easy_facebook_page_plugin"><div id="fb-root"></div>
 					<script>(function(d, s, id) {
 					  var js, fjs = d.getElementsByTagName(s)[0];
@@ -583,232 +344,125 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
 							</div> 
 							
 						</div>
-					</li><li id="wdi_instagram_widget-3" class="widget-container wdi_instagram_widget"><h3 class="widget-title">Instagram Feed</h3>    <style type="text/css">
-      #wdi_feed_0 .wdi_feed_container {
-        width: 100%;
-        background-color: #FFFFFF; /*feed_container_bg_color*/
-        border-bottom: 5px solid #FFFFFF; /*feed_container_bg_color*/;
-      }
+					</li><li id="wdi_instagram_widget-3" class="widget-container wdi_instagram_widget"><h3 class="widget-title">Instagram Feed</h3>    <div id="wdi_feed_0" class="wdi_feed_main_container wdi_layout_th wdi_feed_theme_1 wdi_feed_thumbnail_1"  >
+      <div  class="wdi_js_error">Something is wrong.<br/></div><div  class="wdi_token_error wdi_hidden">Instagram token error.</div><div  class="wdi_private_feed_error wdi_hidden"><span></span></div><div class="wdi_check_fontawesome wdi_hidden"><i class="tenweb-i tenweb-i-instagram"></i></div>      <div id="wdi_spider_popup_loading_0" class="wdi_spider_popup_loading"></div>
+      <div id="wdi_spider_popup_overlay_0" class="wdi_spider_popup_overlay" onclick="wdi_spider_destroypopup(1000)"></div>
+      <div class="wdi_feed_container">
+        <div class="wdi_feed_info">
+          <div id="wdi_feed_0_header" class='wdi_feed_header'></div>
+          <div id="wdi_feed_0_users" class='wdi_feed_users'>
+                  <div class="wdi_single_user">
+        <div class="wdi_header_user_text">
+                      <div class="wdi_user_controls">
+              <div class="wdi_follow_btn"
+                   onclick="window.open('//instagram.com/lynnmehta','_blank')">
+                <span>Follow</span>
+              </div>
+            </div>
+                                      </div>
+      </div>
+      <div class="wdi_clear"></div>
+                </div>
+        </div>
+                <div class="wdi_feed_wrapper wdi_col_1"
+             wdi-res='wdi_col_1'></div>
+        <div class="wdi_clear"></div>
 
-      #wdi_feed_0 .wdi_feed_wrapper {
-        width: 100%; /*feed_wrapper_width,column number * image size*/
-        background-color: #FFFFFF; /*feed_wrapper_bg_color*/
-        text-align: left; /*header_position*/
-      }
+                    <div class="wdi_load_more wdi_hidden">
+              <div class="wdi_load_more_container">
+                <div class="wdi_load_more_wrap">
+                  <div class="wdi_load_more_wrap_inner">
+                    <div class="wdi_load_more_text">Load More</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="wdi_spinner">
+              <div class="wdi_spinner_container">
+                <div class="wdi_spinner_wrap">
+                  <div class="wdi_spinner_wrap_inner"><i class="wdi_load_more_spinner tenweb-i tenweb-i-spinner"></i></div>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+      <div class="wdi_front_overlay"></div>
+    </div>
+        <style></style>
+        <script></script>
+    </li>			</ul>
 
+			
+		</div>
+		</section><!-- #container -->
+
+
+	<div style="clear:both;"></div>
+	</div> <!-- #forbottom -->
+
+
+	<footer id="footer" role="contentinfo">
+		<div id="colophon">
+		
+			
+
+			<div id="footer-widget-area"  role="complementary"  class="footerone" >
+
+				<div id="first" class="widget-area">
+					<ul class="xoxo">
+						<li id="text-15" class="widget-container widget_text">			<div class="textwidget"><p>Lynn Mehta Fine Art</p>
+<p>Alexandria, Virginia</p>
+<p>© Lynn Mehta 2008 &#8211; 2018</p>
+<p><em>All Reproduction Rights Reserved by Artist.</em></p>
+</div>
+		</li>					</ul>
+				</div><!-- #first .widget-area -->
+
+
+
+			</div><!-- #footer-widget-area -->
+			
+		</div><!-- #colophon -->
+
+		<div id="footer2">
+		
+				<span style="display:block;float:right;text-align:right;padding:0 20px 5px;font-size:.9em;">
+	Powered by <a target="_blank" href="http://www.cryoutcreations.eu/" title="Tempera Theme by Cryout Creations">Tempera</a> &amp; <a target="_blank" href="http://wordpress.org/"
+			title="Semantic Personal Publishing Platform">  WordPress.		</a>
+	</span><!-- #site-info -->
+				
+		</div><!-- #footer2 -->
+
+	</footer><!-- #footer -->
+
+	</div><!-- #main -->
+</div><!-- #wrapper -->
+
+
+<link rel='stylesheet' id='unite-gallery-css-css'  href='/wp-content/plugins/unitegallery/unitegallery-plugin/css/unite-gallery.css?ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-tenweb-css'  href='/wp-content/plugins/wd-instagram-feed/css/tenweb-fonts/fonts.css?ver=2.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wdi_frontend_thumbnails-css'  href='/wp-content/plugins/wd-instagram-feed/css/wdi_frontend.min.css?ver=2.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='mCustomScrollbar-css'  href='/wp-content/plugins/wd-instagram-feed/css/gallerybox/jquery.mCustomScrollbar.min.css?ver=2.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wdi_theme_1.css-css'  href='/wp-content/uploads/wd-instagram-feed/wdi_theme_1.css?key=5f9afaecc6ce2&#038;ver=5.5.1' type='text/css' media='all' />
+<style id='generate_feed_styles-inline-css' type='text/css'>
       #wdi_feed_0 .wdi_feed_header {
-        margin: 0px; /*header_margin*/
-        padding: 5px; /*header_padding*/
-        border: 0px solid #DDDDDD; /*header_border_size, header_border_color*/
-        text-align: left; /*header_position*/
         display: none; /*if display-header is true display:block*/
-      }
-
-      #wdi_feed_0 .wdi_header_img_wrap, .wdi_users_img_wrap {
-        height: 40px; /*header_img_width*/
-        width: 40px; /*header_img_width*/
-        border-radius: 0px; /*header_img_width*/
-      }
-
-      #wdi_feed_0 .wdi_header_text {
-        font-size: 18px;
-        font-style: normal;
-        padding: 5px; /*header_text_padding*/
-        color: #0f4973; /*header_text_color*/
-        font-weight: 400; /*header_font_weight*/
-        line-height: 40px; /*header_img_width*/
-      }
-
-      #wdi_feed_0 .wdi_single_user {
-        padding-top: 5px; /*user_padding*/
-        padding-bottom: 5px; /*user_padding*/
-        padding-left: 5px; /*user_padding*/
-        padding-right: 5px; /*user_padding*/
       }
 
             #wdi_feed_0 .wdi_header_user_text {
         padding-top: 5.5px;
-
       }
 
       #wdi_feed_0 .wdi_header_user_text h3 {
         margin-top: 5.5px;
       }
 
-      #wdi_feed_0 .wdi_header_hashtag h3 {
-        margin-top: 11px;
-      }
-
-      #wdi_feed_0 .wdi_header_user_text h3 {
-        font-size: 18px;
-        font-style: normal;
-        line-height: 18px;
-        color: #0f4973; /*header_text_color*/;
-      }
-
-      #wdi_feed_0 .wdi_user_img_wrap img {
-        height: 40px;
-        width: 40px;
-        border-radius: 40px;
-      }
-
       #wdi_feed_0 .wdi_media_info {
-        /*display: inline-block;*/
-        margin-left: 50px;
-        line-height: 18px;
-        color: #0f4973; /*header_text_color !mmm/ seperate*/
         display: block      }
-
-
-      #wdi_feed_0 .wdi_bio {
-        color: #0f4973; /*header_text_color*/
-        font-size: 14px; /*header_text_color*/
-      }
-
-
-      #wdi_feed_0 .wdi_follow_btn {
-        border-radius: 3px;
-        font-size: 18px;
-        background-color: #ffffff;
-        border-color: #0f4973;
-        color: #0f4973;
-        margin-left: 10px;
-        padding: 0 25px;
-      }
-
-      #wdi_feed_0 .wdi_follow_btn:hover {
-        border-color: #0f4973;
-        color: #0f4973;
-        background-color: #ffffff;
-      }
-
-      #wdi_feed_0 .wdi_filter_overlay {
-        width: 40px; /*user_img_width*/
-        height: 40px; /*user_img_width*/
-        border-radius: 40px; /*user_img_width*/
-        background-color: #125688;
-      }
-
-      #wdi_feed_0 .wdi_filter_icon span {
-        width: 40px; /*header_img_width*/
-        height: 40px; /*header_img_width*/
-      }
-
-      #wdi_feed_0 .wdi_photo_wrap {
-        padding: 5px; /*photo_wrap_padding*/
-        width: calc(100% - 2 *5px);
-      }
-
-      #wdi_feed_0 .wdi_photo_wrap_inner {
-        border: 5px solid #ffffff; /*photo_wrap_border_size,photo_wrap_border_color*/
-        background-color: #FFFFFF; /*photo_wrap_bg_color*/
-      }
-
-      #wdi_feed_0 .wdi_photo_img {
-        border-radius: 0px; /*photo_img_border_radius*/
-      }
-
 
       #wdi_feed_0 .wdi_feed_item {
         width: 100%; /*thumbnail_size*/
-      }
-
-      #wdi_feed_0 .wdi_photo_meta {
-        background-color: #FFFFFF; /*photo_meta_bg_color*/
-      }
-
-      #wdi_feed_0 .wdi_thumb_likes {
-        width: 50%; /*photo_meta_one_line==false else 100%*/
-        float: left; /*photo_meta_one_line==true else float none*/
-        font-size: 13px; /*photo_caption_font_size*/;
-        color: #8a8d8e; /*like_text_color*/
-
-      }
-
-      #wdi_feed_0 .wdi_thumb_comments {
-        width: 50%; /*photo_meta_one_line==false else 100%*/
-        float: left; /*photo_meta_one_line==true else float none*/
-        font-size: 13px; /*photo_caption_font_size*/;
-        color: #8a8d8e; /*comment_text_color*/
-
-      }
-
-
-      #wdi_feed_0 .wdi_photo_title {
-        font-size: 14px; /*photo_caption_font_size*/
-        color: #125688; /*photo_caption_color*/
-      }
-
-      #wdi_feed_0 .wdi_photo_title:hover {
-        color: #8e8e8e;
-      }
-
-      #wdi_feed_0 .wdi_load_more_spinner {
-        color: #1e73be; /*load_more_text_color*/
-        font-size: 18.2px; /*load_more_text_font_size*/
-      }
-
-      #wdi_feed_0 .wdi_load_more,
-      #wdi_feed_0 .wdi_spinner {
-        background-color: #FFFFFF; /*feed_container_bg_color*/
-        text-align: center; /*load_more_position*/
-      }
-
-      #wdi_feed_0 .wdi_load_more_wrap,
-      #wdi_feed_0 .wdi_spinner_wrap {
-        padding: 4px; /*load_more_padding*/
-        background-color: #ffffff; /*load_more_bg_color*/
-        border-radius: 500px; /*load_more_border_radius*/
-        height: 90px; /*load_more_height*/
-        width: 90px; /*load_more_width*/
-        border: 1px solid #0f4973; /*load_more_border_size, load_more_border_color*/;
-      }
-
-      #wdi_feed_0 .wdi_load_more_text {
-        color: #1e73be; /*load_more_text_color*/
-        font-size: 14px; /*load_more_text_font_size*/
-      }
-
-      #wdi_feed_0 .wdi_load_more_text img {
-        height: 90px; /*load_more_height*/
-        width: 90px; /*load_more_height*/
-      }
-
-      #wdi_feed_0 .wdi_load_more_wrap:hover {
-        background-color: transparent; /*load_more_wrap_hover_color*/
-      }
-
-      #wdi_feed_0 .wdi_pagination {
-        text-align: center; /*load_more_position*/
-        color: #0f4973; /*pagination_ctrl_color*/
-        font-size: 36px; /*pagination_size*/
-      }
-
-      #wdi_feed_0 .wdi_pagination_ctrl {
-        margin: 15px;
-      }
-
-      #wdi_feed_0 .wdi_pagination_ctrl:hover {
-        color: #25292c;
-      }
-
-      #wdi_feed_0 .wdi_photo_overlay:hover {
-        background-color: #125688;
-        opacity: 0.5;
-      }
-
-      #wdi_feed_0 .wdi_photo_overlay i {
-        font-size: 25px;
-        color: #FFFFFF;
-      }
-
-      #wdi_feed_0 .wdi_filter_active_bg {
-        background-color: #429fff;
-      }
-
-      #wdi_feed_0 .wdi_filter_active_col {
-        color: #429fff;
-        border-color: #429fff;
+        line-height: 0;
       }
 
             @media screen and (min-width: 800px) and (max-width: 1024px) {
@@ -860,135 +514,50 @@ var public_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
         }
       }
 
-          </style>
-    
-    <div id="wdi_feed_0" class="wdi_feed_main_container wdi_layout_th"  >
-      <div id="wdi_spider_popup_loading_0" class="wdi_spider_popup_loading"></div>
-      <div id="wdi_spider_popup_overlay_0" class="wdi_spider_popup_overlay"
-           onclick="wdi_spider_destroypopup(1000)"></div>
-      <div class="wdi_feed_container">
-        <div class="wdi_feed_info">
-          <div id="wdi_feed_0_header" class='wdi_feed_header'></div>
-          <div id="wdi_feed_0_users" class='wdi_feed_users'></div>
-        </div>
-                <div class="wdi_feed_wrapper wdi_col_1"
-             wdi-res='wdi_col_1'></div>
-        <div class="wdi_clear"></div>
-
-                    <div class="wdi_load_more wdi_hidden">
-              <div class="wdi_load_more_container">
-                <div class="wdi_load_more_wrap">
-                  <div class="wdi_load_more_wrap_inner">
-                    <div class="wdi_load_more_text">Load More</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="wdi_spinner">
-              <div class="wdi_spinner_container">
-                <div class="wdi_spinner_wrap">
-                  <div class="wdi_spinner_wrap_inner"><i class="wdi_load_more_spinner fa fa-spinner"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="wdi_js_error wdi_hidden">Something is wrong. Response takes too long or there is JS error. Press Ctrl+Shift+J or Cmd+Shift+J on a Mac.<br/></div>      </div>
-    </div>
-        <style>
-          </style>
-        <script>
-          </script>
-    </li>			</ul>
-
-			
-		</div>
-		</section><!-- #container -->
-
-
-	<div style="clear:both;"></div>
-	</div> <!-- #forbottom -->
-
-
-	<footer id="footer" role="contentinfo">
-		<div id="colophon">
-		
-			
-
-			<div id="footer-widget-area"  role="complementary"  class="footerone" >
-
-				<div id="first" class="widget-area">
-					<ul class="xoxo">
-						<li id="text-15" class="widget-container widget_text">			<div class="textwidget"><p>Lynn Mehta Fine Art</p>
-<p>Alexandria, Virginia</p>
-<p>© Lynn Mehta 2008 &#8211; 2018</p>
-<p><em>All Reproduction Rights Reserved by Artist.</em></p>
-</div>
-		</li>					</ul>
-				</div><!-- #first .widget-area -->
-
-
-
-			</div><!-- #footer-widget-area -->
-			
-		</div><!-- #colophon -->
-
-		<div id="footer2">
-		
-				<span style="display:block;float:right;text-align:right;padding:0 20px 5px;font-size:.9em;">
-	Powered by <a target="_blank" href="http://www.cryoutcreations.eu/" title="Tempera Theme by Cryout Creations">Tempera</a> &amp; <a target="_blank" href="http://wordpress.org/"
-			title="Semantic Personal Publishing Platform">  WordPress.		</a>
-	</span><!-- #site-info -->
-				
-		</div><!-- #footer2 -->
-
-	</footer><!-- #footer -->
-
-	</div><!-- #main -->
-</div><!-- #wrapper -->
-
-
-<link rel='stylesheet' id='unite-gallery-css-css'  href='/wp-content/plugins/unitegallery/unitegallery-plugin/css/unite-gallery.css?ver=4.9.15' type='text/css' media='all' />
-<link rel='stylesheet' id='wdi_mCustomScrollbar-css'  href='/wp-content/plugins/wd-instagram-feed/css/gallerybox/jquery.mCustomScrollbar.min.css?ver=1.2.11' type='text/css' media='all' />
-<link rel='stylesheet' id='wdi_frontend_thumbnails-css'  href='/wp-content/plugins/wd-instagram-feed/css/wdi_frontend.min.css?ver=1.2.11' type='text/css' media='all' />
-<link rel='stylesheet' id='font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=1.2.11' type='text/css' media='all' />
-<script type='text/javascript'>
+          
+</style>
+<script type='text/javascript' id='tempera-frontend-js-extra'>
 /* <![CDATA[ */
 var tempera_settings = {"mobile":"1","fitvids":"1"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/themes/tempera/js/frontend.js?ver=1.6.1.2'></script>
-<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.9.15'></script>
-<script type='text/javascript' src='/wp-content/plugins/wp-jquery-lightbox/jquery.touchwipe.min.js?ver=1.4.6'></script>
-<script type='text/javascript'>
+<script type='text/javascript' src='/wp-content/themes/tempera/js/frontend.js?ver=1.6.1.2' id='tempera-frontend-js'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=5.5.1' id='comment-reply-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wp-jquery-lightbox/jquery.touchwipe.min.js?ver=1.4.6' id='wp-jquery-lightbox-swipe-js'></script>
+<script type='text/javascript' id='wp-jquery-lightbox-js-extra'>
 /* <![CDATA[ */
 var JQLBSettings = {"showTitle":"1","showCaption":"1","showNumbers":"1","fitToScreen":"1","resizeSpeed":"300","showDownload":"0","navbarOnTop":"0","marginSize":"0","slideshowSpeed":"4000","prevLinkTitle":"previous image","nextLinkTitle":"next image","closeTitle":"close image gallery","image":"Image ","of":" of ","download":"Download","pause":"(pause slideshow)","play":"(play slideshow)"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/wp-jquery-lightbox/jquery.lightbox.min.js?ver=1.4.6'></script>
-<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.9.15'></script>
-<script type='text/javascript' src='/wp-content/plugins/unitegallery/unitegallery-plugin/js/unitegallery.min.js?ver=4.9.15'></script>
-<script type='text/javascript' src='/wp-content/plugins/unitegallery/unitegallery-plugin/themes/tiles/ug-theme-tiles.js?ver=4.9.15'></script>
-<script type='text/javascript' src='/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_instagram.min.js?ver=1.2.11'></script>
-<script type='text/javascript'>
+<script type='text/javascript' src='/wp-content/plugins/wp-jquery-lightbox/jquery.lightbox.min.js?ver=1.4.6' id='wp-jquery-lightbox-js'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=5.5.1' id='wp-embed-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/unitegallery/unitegallery-plugin/js/unitegallery.min.js?ver=5.5.1' id='unitegallery_main-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/unitegallery/unitegallery-plugin/themes/tiles/ug-theme-tiles.js?ver=5.5.1' id='unitegallery_tiles_theme-js'></script>
+<script type='text/javascript' src='/wp-includes/js/underscore.min.js?ver=1.8.3' id='underscore-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/jquery.lazyload.min.js?ver=2.4.7' id='wdi_lazy_load-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_instagram.min.js?ver=2.4.7' id='wdi_instagram-js'></script>
+<script type='text/javascript' id='wdi_frontend-js-extra'>
 /* <![CDATA[ */
-var wdi_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
-var wdi_url = {"plugin_url":"\/wp-content\/plugins\/wd-instagram-feed\/frontend\/","ajax_url":"\/wp-admin\/admin-ajax.php"};
-var wdi_front_messages = {"connection_error":"Connection Error, try again later :(","user_not_found":"Username not found","network_error":"Network error, please try again later :(","hashtag_nodata":"There is no data for that hashtag","filter_title":"Click to filter images by this user","invalid_users_format":"Provided feed users are invalid or obsolete for this version of plugin","feed_nomedia":"There is no media in this feed","follow":"Follow","show_alerts":""};
-var wdi_feed_0 = {"feed_row":{"thumb_user":"lynnmehta","feed_name":"Sample Feed","feed_thumb":"https:\/\/scontent.cdninstagram.com\/t51.2885-19\/s150x150\/11348240_483778538454157_1438223555_a.jpg","published":"1","theme_id":"1","feed_users":"[{\"username\":\"lynnmehta\",\"id\":\"1998699072\"}]","feed_display_view":"load_more_btn","sort_images_by":"date","display_order":"desc","follow_on_instagram_btn":"1","display_header":"0","number_of_photos":"4","load_more_number":"4","pagination_per_page_number":"10","pagination_preload_number":"10","image_browser_preload_number":"10","image_browser_load_number":"10","number_of_columns":"1","resort_after_load_more":"0","show_likes":"1","show_description":"0","show_comments":"1","show_usernames":"0","display_user_info":"1","display_user_post_follow_number":"1","show_full_description":"1","disable_mobile_layout":"0","feed_type":"thumbnails","feed_item_onclick":"lightbox","popup_fullscreen":"0","popup_width":"640","popup_height":"640","popup_type":"none","popup_autoplay":"0","popup_interval":"5","popup_enable_filmstrip":"0","popup_filmstrip_height":"70","autohide_lightbox_navigation":"1","popup_enable_ctrl_btn":"1","popup_enable_fullscreen":"1","popup_enable_info":"0","popup_info_always_show":"0","popup_info_full_width":"0","popup_enable_comment":"0","popup_enable_fullsize_image":"1","popup_enable_download":"0","popup_enable_share_buttons":"0","popup_enable_facebook":"0","popup_enable_twitter":"0","popup_enable_google":"0","popup_enable_pinterest":"0","popup_enable_tumblr":"0","show_image_counts":"0","enable_loop":"1","popup_image_right_click":"1","conditional_filters":"","conditional_filter_type":"none","show_username_on_thumb":"0","conditional_filter_enable":"0","liked_feed":"userhash","mobile_breakpoint":"640","redirect_url":"","id":"1","widget":true,"access_token":"1998699072.54da896.1ceece305ff24a228ef5d394e9624132","wdi_feed_counter":0},"data":[],"usersData":[],"dataCount":"0"};
+var wdi_ajax = {"ajax_url":"\/wp-admin\/admin-ajax.php","wdi_nonce":"f17410bbcb","WDI_MINIFY":"true"};
+var wdi_url = {"plugin_url":"\/wp-content\/plugins\/wd-instagram-feed\/","ajax_url":"\/wp-admin\/admin-ajax.php"};
+var wdi_front_messages = {"connection_error":"Connection Error, try again later :(","user_not_found":"Username not found","network_error":"Network error, please try again later :(","hashtag_nodata":"There is no data for that hashtag","filter_title":"Click to filter images by this user","invalid_users_format":"Provided feed users are invalid or obsolete for this version of plugin","feed_nomedia":"There is no media in this feed","expired_token":"Error: Access token session has expired, please reauthorize access token","follow":"Follow","show_alerts":"","wdi_token_flag_nonce":"55feb9fbb7","wdi_token_error_flag":""};
+var wdi_object = {"user":{"type":"personal","user_id":"17841402012169837","user_name":"lynnmehta","access_token":"IGQVJWR0RJd09jRDEtbjgxM2lDdnN2Q2ZAneDFFa2EwUzg3OEZAwV2RWbzcyeXNnaDZAVaHA3eDZA0SG9DVU1lR2c4ZAHdEcXdDRTV1Q1hSbWswYmlpWWYyQU1aUnBYeUJuM2tzVUl0RVFR","start_in":1603994253,"expires_in":"5184000"}};
+var wdi_feed_0 = {"feed_row":{"thumb_user":"lynnmehta","feed_name":"Sample Feed","feed_thumb":"https:\/\/scontent.cdninstagram.com\/t51.2885-19\/s150x150\/11348240_483778538454157_1438223555_a.jpg","published":"1","theme_id":"1","feed_users":"[{\"username\":\"lynnmehta\",\"id\":\"1998699072\"}]","feed_display_view":"load_more_btn","sort_images_by":"date","display_order":"desc","follow_on_instagram_btn":"1","display_header":"0","number_of_photos":"4","load_more_number":"4","pagination_per_page_number":"10","pagination_preload_number":"10","image_browser_preload_number":"10","image_browser_load_number":"10","number_of_columns":"1","resort_after_load_more":"0","show_likes":"1","show_description":"0","show_comments":"1","show_usernames":"0","display_user_info":"1","display_user_post_follow_number":"1","show_full_description":"1","disable_mobile_layout":"0","feed_type":"thumbnails","feed_item_onclick":"lightbox","popup_fullscreen":"0","popup_width":"640","popup_height":"640","popup_type":"none","popup_autoplay":"0","popup_interval":"5","popup_enable_filmstrip":"0","popup_filmstrip_height":"70","autohide_lightbox_navigation":"1","popup_enable_ctrl_btn":"1","popup_enable_fullscreen":"1","popup_enable_info":"0","popup_info_always_show":"0","popup_info_full_width":"0","popup_enable_comment":"0","popup_enable_fullsize_image":"1","popup_enable_download":"0","popup_enable_share_buttons":"0","popup_enable_facebook":"0","popup_enable_twitter":"0","popup_enable_google":"0","popup_enable_pinterest":"0","popup_enable_tumblr":"0","show_image_counts":"0","enable_loop":"1","popup_image_right_click":"1","conditional_filters":"","conditional_filter_type":"none","show_username_on_thumb":"0","conditional_filter_enable":"0","liked_feed":"userhash","mobile_breakpoint":"640","redirect_url":"","feed_resolution":"optimal","hashtag_top_recent":"1","id":"1","nothing_to_display":"0","username":"lynnmehta","widget":true,"access_token":"IGQVJWR0RJd09jRDEtbjgxM2lDdnN2Q2ZAneDFFa2EwUzg3OEZAwV2RWbzcyeXNnaDZAVaHA3eDZA0SG9DVU1lR2c4ZAHdEcXdDRTV1Q1hSbWswYmlpWWYyQU1aUnBYeUJuM2tzVUl0RVFR","wdi_feed_counter":0},"data":[],"usersData":[],"dataCount":"0"};
+var wdi_theme_1 = {"theme_name":"Instagram","default_theme":"1","feed_container_bg_color":"#FFFFFF","feed_wrapper_width":"100%","feed_container_width":"100%","feed_wrapper_bg_color":"#FFFFFF","active_filter_bg_color":"#429fff","header_margin":"0px","header_padding":"5px","header_border_size":"0px","header_border_color":"#DDDDDD","header_position":"left","header_img_width":"40","header_border_radius":"0","header_text_padding":"5px","header_text_color":"#0f4973","header_font_weight":"400","header_text_font_size":"18px","header_text_font_style":"normal","follow_btn_border_radius":"3","follow_btn_padding":"25","follow_btn_margin":"10","follow_btn_bg_color":"#ffffff","follow_btn_border_color":"#0f4973","follow_btn_text_color":"#0f4973","follow_btn_font_size":"18","follow_btn_border_hover_color":"#0f4973","follow_btn_text_hover_color":"#0f4973","follow_btn_background_hover_color":"#ffffff","user_padding":"5px","user_horizontal_margin":"","user_border_size":"0px","user_border_color":"","user_img_width":"40","user_border_radius":"40","user_background_color":"","users_border_size":"0px","users_border_color":"","users_background_color":"","users_text_color":"#0f4973","users_font_weight":"400","users_text_font_size":"18px","users_text_font_style":"normal","user_description_font_size":"14px","lightbox_overlay_bg_color":"#25292c","lightbox_overlay_bg_transparent":"90","lightbox_bg_color":"#ffffff","lightbox_ctrl_btn_height":"20","lightbox_ctrl_btn_margin_top":"10","lightbox_ctrl_btn_margin_left":"7","lightbox_ctrl_btn_pos":"bottom","lightbox_ctrl_cont_bg_color":"#2a5b83","lightbox_ctrl_cont_border_radius":"4","lightbox_ctrl_cont_transparent":"80","lightbox_ctrl_btn_align":"center","lightbox_ctrl_btn_color":"#FFFFFF","lightbox_ctrl_btn_transparent":"100","lightbox_toggle_btn_height":"14","lightbox_toggle_btn_width":"100","lightbox_close_btn_border_radius":"16","lightbox_close_btn_border_width":"2","lightbox_close_btn_border_style":"none","lightbox_close_btn_border_color":"#FFFFFF","lightbox_close_btn_box_shadow":"none","lightbox_close_btn_bg_color":"#2a5b83","lightbox_close_btn_transparent":"100","lightbox_close_btn_width":"20","lightbox_close_btn_height":"20","lightbox_close_btn_top":"-10","lightbox_close_btn_right":"-10","lightbox_close_btn_size":"15","lightbox_close_btn_color":"#FFFFFF","lightbox_close_btn_full_color":"#000000","lightbox_close_btn_hover_color":"#000000","lightbox_comment_share_button_color":"#ffffff","lightbox_rl_btn_style":"fa-chevron","lightbox_rl_btn_bg_color":"#2a5b83","lightbox_rl_btn_transparent":"80","lightbox_rl_btn_box_shadow":"none","lightbox_rl_btn_height":"40","lightbox_rl_btn_width":"40","lightbox_rl_btn_size":"20","lightbox_close_rl_btn_hover_color":"#25292c","lightbox_rl_btn_color":"#FFFFFF","lightbox_rl_btn_border_radius":"20","lightbox_rl_btn_border_width":"0","lightbox_rl_btn_border_style":"none","lightbox_rl_btn_border_color":"#FFFFFF","lightbox_filmstrip_pos":"top","lightbox_filmstrip_thumb_margin":"0 1px","lightbox_filmstrip_thumb_border_width":"1","lightbox_filmstrip_thumb_border_style":"solid","lightbox_filmstrip_thumb_border_color":"#25292c","lightbox_filmstrip_thumb_border_radius":"0","lightbox_filmstrip_thumb_active_border_width":"0","lightbox_filmstrip_thumb_active_border_color":"#FFFFFF","lightbox_filmstrip_thumb_deactive_transparent":"70","lightbox_filmstrip_rl_btn_size":"20","lightbox_filmstrip_rl_btn_color":"#FFFFFF","lightbox_filmstrip_rl_bg_color":"#3B3B3B","lightbox_info_pos":"top","lightbox_info_align":"right","lightbox_info_bg_color":"#3b3b3b","lightbox_info_bg_transparent":"80","lightbox_info_border_width":"1","lightbox_info_border_style":"none","lightbox_info_border_color":"#3b3b3b","lightbox_info_border_radius":"5","lightbox_info_padding":"5px","lightbox_info_margin":"15px","lightbox_title_color":"#FFFFFF","lightbox_title_font_style":"segoe ui","lightbox_title_font_weight":"bold","lightbox_title_font_size":"13","lightbox_description_color":"#FFFFFF","lightbox_description_font_style":"segoe ui","lightbox_description_font_weight":"normal","lightbox_description_font_size":"14","lightbox_info_height":"30","lightbox_comment_width":"400","lightbox_comment_pos":"right","lightbox_comment_bg_color":"#ffffff","lightbox_comment_font_size":"12","lightbox_comment_font_color":"#000000","lightbox_comment_font_style":"segoe ui","lightbox_comment_author_font_size":"14","lightbox_comment_author_font_color":"#125688","lightbox_comment_author_font_color_hover":"#002160","lightbox_comment_date_font_size":"10","lightbox_comment_body_font_size":"12","lightbox_comment_input_border_width":"1","lightbox_comment_input_border_style":"none","lightbox_comment_input_border_color":"#666666","lightbox_comment_input_border_radius":"0","lightbox_comment_input_padding":"2px","lightbox_comment_input_bg_color":"#333333","lightbox_comment_button_bg_color":"#616161","lightbox_comment_button_padding":"3px 10px","lightbox_comment_button_border_width":"1","lightbox_comment_button_border_style":"none","lightbox_comment_button_border_color":"#666666","lightbox_comment_button_border_radius":"3","lightbox_comment_separator_width":"1","lightbox_comment_separator_style":"solid","lightbox_comment_separator_color":"#125688","lightbox_comment_load_more_color":"#125688","lightbox_comment_load_more_color_hover":"#000000","th_photo_wrap_padding":"5px","th_photo_wrap_border_size":"5px","th_photo_wrap_border_color":"#ffffff","th_photo_img_border_radius":"0px","th_photo_wrap_bg_color":"#FFFFFF","th_photo_meta_bg_color":"#FFFFFF","th_photo_meta_one_line":"1","th_like_text_color":"#8a8d8e","th_comment_text_color":"#8a8d8e","th_photo_caption_font_size":"14px","th_photo_caption_color":"#125688","th_feed_item_margin":"0","th_photo_caption_hover_color":"#8e8e8e","th_like_comm_font_size":"13px","th_overlay_hover_color":"#125688","th_overlay_hover_transparent":"50","th_overlay_hover_icon_color":"#FFFFFF","th_overlay_hover_icon_font_size":"25px","th_photo_img_hover_effect":"","mas_photo_wrap_padding":"5px","mas_photo_wrap_border_size":"0px","mas_photo_wrap_border_color":"gray","mas_photo_img_border_radius":"0px","mas_photo_wrap_bg_color":"#FFFFFF","mas_photo_meta_bg_color":"#FFFFFF","mas_photo_meta_one_line":"1","mas_like_text_color":"#8a8d8e","mas_comment_text_color":"#8a8d8e","mas_photo_caption_font_size":"14px","mas_photo_caption_color":"#125688","mas_feed_item_margin":"0","mas_photo_caption_hover_color":"#8e8e8e","mas_like_comm_font_size":"13px","mas_overlay_hover_color":"#125688","mas_overlay_hover_transparent":"50","mas_overlay_hover_icon_color":"#FFFFFF","mas_overlay_hover_icon_font_size":"25px","mas_photo_img_hover_effect":"","blog_style_photo_wrap_padding":"5px","blog_style_photo_wrap_border_size":"0px","blog_style_photo_wrap_border_color":"gray","blog_style_photo_img_border_radius":"0px","blog_style_photo_wrap_bg_color":"#FFFFFF","blog_style_photo_meta_bg_color":"#FFFFFF","blog_style_photo_meta_one_line":"1","blog_style_like_text_color":"#8a8d8e","blog_style_comment_text_color":"#8a8d8e","blog_style_photo_caption_font_size":"16px","blog_style_photo_caption_color":"#125688","blog_style_feed_item_margin":"0","blog_style_photo_caption_hover_color":"#8e8e8e","blog_style_like_comm_font_size":"20px","image_browser_photo_wrap_padding":"5px","image_browser_photo_wrap_border_size":"0px","image_browser_photo_wrap_border_color":"gray","image_browser_photo_img_border_radius":"0px","image_browser_photo_wrap_bg_color":"#FFFFFF","image_browser_photo_meta_bg_color":"#FFFFFF","image_browser_photo_meta_one_line":"1","image_browser_like_text_color":"#8a8d8e","image_browser_comment_text_color":"#8a8d8e","image_browser_photo_caption_font_size":"16px","image_browser_photo_caption_color":"#125688","image_browser_feed_item_margin":"0","image_browser_photo_caption_hover_color":"#8e8e8e","image_browser_like_comm_font_size":"20px","load_more_position":"center","load_more_padding":"4px","load_more_bg_color":"#ffffff","load_more_border_radius":"500px","load_more_height":"90px","load_more_width":"90px","load_more_border_size":"1px","load_more_border_color":"#0f4973","load_more_text_color":"#1e73be","load_more_text_font_size":"14px","load_more_wrap_hover_color":"transparent","pagination_ctrl_color":"#0f4973","pagination_size":"36px","pagination_ctrl_margin":"15px","pagination_ctrl_hover_color":"#25292c","pagination_position":"center","pagination_position_vert":"top","th_thumb_user_bg_color":"","th_thumb_user_color":"","mas_thumb_user_bg_color":"","mas_thumb_user_color":"","id":"1"};
 var wdi_front = {"feed_counter":"0"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_frontend.min.js?ver=1.2.11'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_responsive.min.js?ver=1.2.11'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.mobile.js?ver=1.2.11'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.mCustomScrollbar.concat.min.js?ver=1.2.11'></script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.fullscreen-0.4.1.js?ver=1.2.11'></script>
-<script type='text/javascript'>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_frontend.min.js?ver=2.4.7' id='wdi_frontend-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/wdi_responsive.min.js?ver=2.4.7' id='wdi_responsive-js'></script>
+<script type='text/javascript' id='wdi_gallery_box-js-extra'>
 /* <![CDATA[ */
 var wdi_objectL10n = {"wdi_field_required":"Field is required.","wdi_mail_validation":"This is not a valid email address.","wdi_search_result":"There are no images matching your search."};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/wdi_gallery_box.min.js?ver=1.2.11'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/wdi_gallery_box.min.js?ver=2.4.7' id='wdi_gallery_box-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.mobile.js?ver=2.4.7' id='jquery-mobile-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.mCustomScrollbar.concat.min.js?ver=2.4.7' id='jquery-mCustomScrollbar-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/wd-instagram-feed/js/gallerybox/jquery.fullscreen-0.4.1.js?ver=2.4.7' id='jquery-fullscreen-js'></script>
 <script type='text/javascript'>
 
 				var ugapi1;

@@ -6,13 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments on: San Diego Museum of Art Artists Guild Juried Exhibition &#8220;Reflections&#8221;</title>
+	<title>
+	Comments on: San Diego Museum of Art Artists Guild Juried Exhibition &#8220;Reflections&#8221;	</title>
 	<atom:link href="/2014/01/san-diego-museum-of-art-artists-guild-juried-exhibition-reflections/feed/" rel="self" type="application/rss+xml" />
 	<link>/2014/01/san-diego-museum-of-art-artists-guild-juried-exhibition-reflections/</link>
 	<description></description>
-	<lastBuildDate>Mon, 04 Mar 2013 02:05:58 +0000</lastBuildDate>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.15</generator>
+	<lastBuildDate>Fri, 17 Jan 2014 15:09:14 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.5.1</generator>
 </channel>
 </rss>
